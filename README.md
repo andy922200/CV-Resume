@@ -1,4 +1,4 @@
-# CV-RESUME 個人作品集與簡歷
+# [CV-RESUME 個人作品集與簡歷](https://andy922200.github.io/CV-Resume/)
 This is a personal portfolio and resume.
 這是個人的作品集與簡歷。
 
@@ -11,7 +11,7 @@ Languages, knowledge & skills and certificates
 語言、知識技術和證書
 
 ## Resume 履歷
-###Education 教育程度
+### Education 教育程度
 * 2010~2014 NTHU, Taiwan 台灣清華大學
 * 2018~2019 Newcastle University, United Kingdom 英國紐卡斯爾大學
 ###Experience 工作經驗
