@@ -3,4 +3,7 @@ $(document).ready(function () {
     event.preventDefault();
     $('body').toggleClass('menu-show');
   });
+  $(".menu li a").on("click", function (event) {
+    $('body').toggleClass('menu-show');
+  });
 });

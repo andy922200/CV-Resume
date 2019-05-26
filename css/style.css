@@ -86,6 +86,10 @@ header {
   float:left;
 }
 
+.showMenu{
+  display:none;
+}
+
 .menu{
   float:right;
 }
@@ -103,10 +107,6 @@ header {
   font-weight: bold;
 }
 
-.showMenu{
-  display:none;
-}
-
 @media (max-width: 576px) {
 	.menu {
     /*隱藏選單*/
@@ -118,7 +118,6 @@ header {
     /*絕對定位疊在網頁上*/
     position: absolute;
     z-index: 100;
-    /*header 80px+1px border 線條*/
     top: 90px;
     /* left:0 right:0表示滿版 */
     left: 0;
@@ -136,6 +135,7 @@ header {
 	.menu li a:hover{
     background: #69CA62;
   }
+  /*按鍵位置*/
 	.showMenu{
     display:block;
     float: right;
