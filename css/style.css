@@ -8,7 +8,7 @@ html, body {
 body {
   padding: 0px;
   margin: 0px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -31,8 +31,8 @@ ul, ol {
   padding: 0px;
 }
 
-a, a:hover, a:focus {
-  margin: 0px;
+a, a:hover, a:focus{
+  /*margin: 0px;*/
   padding: 0px;
   text-decoration: none;
 }
@@ -60,7 +60,7 @@ h2 {
   margin-bottom: 20px;
   text-align: center;
   font-size: 40px;
-  line-height: 80px;
+  line-height: 60px;
   letter-spacing: 2px;
 }
 
@@ -99,8 +99,55 @@ header {
   text-transform: capitalize;
   display: block;
   padding: 25px 12px;
-  size:24px;
+  size:14px;
   font-weight: bold;
+}
+
+.showMenu{
+  display:none;
+}
+
+@media (max-width: 576px) {
+	.nav{
+		/*隱藏選單開始*/
+		max-height: 0;
+		overflow: hidden;
+		/*隱藏選單結束*/
+		/*漸變效果*/
+    transition: max-height 2.3s;
+    margin-top: 1px;
+    /*絕對定位疊在網頁上*/
+    position: absolute;
+    z-index: 100;
+    /*header 80px+1px border 線條*/
+    top: 81px;
+    /* left:0 right:0表示滿版 */
+    left: 0;
+   	right: 0;
+    background: rgb(49, 49, 49);
+    text-align: center;
+	}
+	.nav li{
+		float: none;
+	}
+	.nav li a{
+    transition: all 0.3s;
+    color:white;
+  }
+	.nav li a:hover{
+    background: #69CA62;
+  }
+	.showMenu{
+    display:block;
+    float: right;
+    margin: 1em;
+    font-size:20px;
+    color:black;
+  }
+  /*jQuery點擊後動態在 body 加上 class */
+  .menu-show .nav{
+  	max-height: 500px;
+  }
 }
 
 /* ========== 03. Home Background 設定 ========== */
