@@ -86,15 +86,15 @@ header {
   float:left;
 }
 
-.nav{
+.menu{
   float:right;
 }
 
-.nav li{
+.menu li{
   display:inline-block; 
 }
 
-.nav li a{
+.menu li a{
   color:black;
   text-transform: capitalize;
   display: block;
@@ -108,11 +108,10 @@ header {
 }
 
 @media (max-width: 576px) {
-	.nav{
-		/*隱藏選單開始*/
-		max-height: 0;
-		overflow: hidden;
-		/*隱藏選單結束*/
+	.menu {
+    /*隱藏選單*/
+    max-height: 0px;
+    overflow: hidden;
 		/*漸變效果*/
     transition: max-height 2.3s;
     margin-top: 1px;
@@ -120,21 +119,21 @@ header {
     position: absolute;
     z-index: 100;
     /*header 80px+1px border 線條*/
-    top: 81px;
+    top: 90px;
     /* left:0 right:0表示滿版 */
     left: 0;
    	right: 0;
     background: rgb(49, 49, 49);
     text-align: center;
 	}
-	.nav li{
+	.menu li{
 		float: none;
 	}
-	.nav li a{
+	.menu li a{
     transition: all 0.3s;
     color:white;
   }
-	.nav li a:hover{
+	.menu li a:hover{
     background: #69CA62;
   }
 	.showMenu{
@@ -143,11 +142,11 @@ header {
     margin: 1em;
     font-size:20px;
     color:black;
-  }
-  /*jQuery點擊後動態在 body 加上 class */
-  .menu-show .nav{
-  	max-height: 500px;
-  }
+  } 
+  /*jQ點擊後動態在 body 加上 class */
+  .menu-show .menu{
+    max-height: 500px
+ }
 }
 
 /* ========== 03. Home Background 設定 ========== */

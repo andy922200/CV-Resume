@@ -3,5 +3,4 @@ $(document).ready(function () {
     event.preventDefault();
     $('body').toggleClass('menu-show');
   });
-
 });
