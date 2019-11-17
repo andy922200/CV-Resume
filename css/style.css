@@ -259,7 +259,7 @@ header {
   color: #000;
   border: 1px solid #333;
   border-radius: 10px;
-  padding: 10px 38px;
+  padding: 10px 30px;
   text-transform: capitalize;
 }
 
@@ -311,6 +311,28 @@ header {
   color: #000;
   font-size: 16px;
   line-height: 28px;
+}
+
+ @media (max-width: 465px) {
+.service-content i {
+  color:#EFB21E;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.service-content h3 {
+  color:#003831;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 13px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.service-content li {
+  font-size: 12px;
+}
 }
 
 /* ========== 06. Resume 設定 ========== */
