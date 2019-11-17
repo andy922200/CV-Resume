@@ -1,5 +1,4 @@
 /* ========== 01. CSS 全區設定 ========== */
-/*公版內容開始，排版用class，標註特定位置用id*/
 html, body {
   width: 100%;
   height: 100%;
@@ -8,21 +7,35 @@ html, body {
 body {
   padding: 0px;
   margin: 0px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: black;
   background-color: #fff;
   font-family: 'Montserrat', sans-serif;
 }
 
 * {
-  /*border-box：實際寬高＝所設定的數值(已包含border和padding)*/
   box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
   padding: 0px;
+}
+
+.container{
+  margin:20px auto;
+  position: relative;
+  top:120px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 ul, ol {
@@ -32,7 +45,6 @@ ul, ol {
 }
 
 a, a:hover, a:focus{
-  /*margin: 0px;*/
   padding: 0px;
   text-decoration: none;
 }
@@ -41,27 +53,6 @@ img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-/*容器 Container 設定*/
-.container {
-  width: 85%;
-  max-width: 1170px;
-  margin: 0 auto;
-  position: relative;
-}
-
-section {
-  padding: 50px 0;
-}
-
-/*共用H2字型*/
-h2 {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 40px;
-  line-height: 60px;
-  letter-spacing: 2px;
 }
 
 .clearfix::after {
@@ -78,20 +69,13 @@ header {
   width: 100%;
   left: 0;
   right: 0;
-  background-color: white;
-  z-index: 100;
-}
-
-#logo{
-  float:left;
+  max-height:100px;
+  z-index: 20;
+  background-color: #003831;
 }
 
 .showMenu{
   display:none;
-}
-
-.menu{
-  float:right;
 }
 
 .menu li{
@@ -99,12 +83,16 @@ header {
 }
 
 .menu li a{
-  color:black;
+  color:#fff;
   text-transform: capitalize;
   display: block;
   padding: 25px 12px;
-  size:14px;
+  font-size:20px;
   font-weight: bold;
+}
+
+.menu li a:hover{
+  color:gray;
 }
 
 @media (max-width: 576px) {
@@ -119,7 +107,6 @@ header {
     position: absolute;
     z-index: 100;
     top: 90px;
-    /* left:0 right:0表示滿版 */
     left: 0;
    	right: 0;
     background: rgb(49, 49, 49);
@@ -129,11 +116,13 @@ header {
 		float: none;
 	}
 	.menu li a{
+    font-size:16px;
     transition: all 0.3s;
     color:white;
   }
 	.menu li a:hover{
-    background: #69CA62;
+    background: #008677;
+    color:black;
   }
   /*按鍵位置*/
 	.showMenu{
@@ -141,50 +130,60 @@ header {
     float: right;
     margin: 1em;
     font-size:20px;
-    color:black;
+    color:#fff;
   } 
   /*jQ點擊後動態在 body 加上 class */
   .menu-show .menu{
-    max-height: 500px
+    max-height: 400px
  }
 }
 
 /* ========== 03. Home Background 設定 ========== */
 .home_bg{
-  background-image: url(../images/newprofile.jpg);
+  background-image: url(../images/topImage.jpg);
   background-size:cover;
   background-position:center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /*讓圖片看起來會隨著滑鼠滾動*/
+  background-attachment: fixed;
+  width:100%;
+  height:60%;
+  display:flex;
+  justify-content: center;
+  position: relative;
+  left:0;
+  top:100px;
+  padding: 100px;
+}
+
+.overlay{ /*加入遮色片*/
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  top: 0px;
   width: 100%;
   height:100%;
 }
 
-.container_table {
-  display: table;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.container_table_cell {
-  display: table-cell;
+.content{
+  color:white;
   text-align: center;
-  vertical-align: middle;
+  z-index: 10;
 }
 
-.container_table_cell h2 {
-  color: #fff;
-  font-size: 54px;
+.content h2{
+  font-size:36px;
+  font-weight: bold;
 }
 
-.container_table_cell h5 {
-  color: #fff;
-  font-size: 20px;
+.content h5{
+  font-size:20px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .social_icons{
   margin-top:10px;
+  text-align: center;
 }
 
 .social_icons a {
@@ -193,17 +192,8 @@ header {
   width: 30px;
   height: 40px;
   line-height: 40px;
-  font-size: 26px;
-  margin-right: 7px;
-}
-
-.overlay{ /*加入遮色片*/
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  font-size: 32px;
+  margin-right: 14px;
 }
 
 /* ========== 04. About Me 設定 ========== */
@@ -211,35 +201,46 @@ header {
   background-color: #f9f9f9;
 }
 
+.about_me h2{
+  color:#003831;
+}
+
+.col-left, .col-right {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
 .avatar img{
   margin:auto;
   display:block;
-  max-width: 400px;
-}
-.col-left, .col-right { /*兩欄式排版*/
-  float: left;
-  width: 50%;
-  padding: 0 15px; /*先設定了border-box，因padding屬於border內側，所以寬度會依舊維持100%*/
+  width:100%;
+  height:100%;
+  max-width:250px;
+  max-height:250px;
 }
 
 .personal-info h3 {
   font-size: 20px;
+  font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 6px;
   text-transform: capitalize;
 }
 
 .description {
-  margin: 30px auto;
+  margin: 10px auto;
 }
 
 .description p{
   margin: 5px 0px;
+  font-size: 14px;
 }
 
-.description li, .description a {
+.description li{
   color: #000000;
   font-size: 18px;
+  font-weight: bold;
   line-height: 30px;
   text-transform: capitalize;
 }
@@ -249,8 +250,8 @@ header {
 }
 
 .button-group .download_cv, .button-group .visitMyBLog {
-  margin:5px 0px 5px 0px;
-  display: inline-block; /*水平排版時，將物件當成元素，可設定行高和寬度等*/
+  margin:20px 0px;
+  display: inline-block; 
 }
 
 .button-group a {
@@ -262,8 +263,8 @@ header {
   text-transform: capitalize;
 }
 
-.button-group a:hover { /*pseudo-class 偽元素設定，使滑鼠效果產生*/
-  background: #000;
+.button-group a:hover { 
+  background: #EFB21E;
   color: #fff;
   /*語法指定特定的瀏覽器使用，解決相容性問題*/
   -webkit-transition: all .4s linear; /*Google Chrome & Safari*/
@@ -275,22 +276,30 @@ header {
 
 /* ========== 05. What I Offer 設定 ========== */
 .my_service {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
+}
+
+.serviceTopTitle{
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .service-content {
   float: left;
   width: 33.33333333%;
-  padding: 0 15px;
+  padding: 10px;
 }
 
 .service-content i {
+  color:#EFB21E;
   font-size: 40px;
   line-height: 46px;
 }
 
 .service-content h3 {
-  font-size: 16px;
+  color:#003831;
+  font-weight: bold;
+  font-size: 20px;
   letter-spacing: 1px;
   margin-top: 13px;
   margin-bottom: 8px;
@@ -298,12 +307,21 @@ header {
 }
 
 .service-content li {
-  color: #767676;
-  font-size: 14px;
+  list-style: disc;
+  color: #000;
+  font-size: 16px;
   line-height: 28px;
 }
 
 /* ========== 06. Resume 設定 ========== */
+.resume{
+  background-color: #f9f9f9;
+}
+
+.resume h2{
+  color:#003831;
+}
+
 .col-horizontal {
   padding-bottom: 16px;
   border-bottom: 1px solid #767676;
@@ -314,7 +332,9 @@ header {
 }
 
 h3.resume-subtitle {
-  font-size: 20px;
+  color:#003831;
+  font-weight: bold;
+  font-size: 24px;
   margin-left: 15px;
   margin-top: 12px;
   text-transform: capitalize;
@@ -327,7 +347,7 @@ h3.resume-subtitle {
 }
 
 .experience-year {
-  background-color: #000;
+  background-color: #EFB21E;
   color: #fff;
   display: inline-block;
   padding: 4px 20px;
@@ -352,6 +372,10 @@ h3.resume-subtitle {
   line-height: 24px;
 }
 
+.resumeButtons{
+  margin:20px auto;
+}
+
 /* ========== 07. QUOTES 設定 ========== */
 .quotes{
   background-image: url(../images/quote.jpg);
@@ -359,23 +383,40 @@ h3.resume-subtitle {
   background-position:center;
   background-repeat: no-repeat;
   background-attachment: fixed; /*讓圖片看起來會隨著滑鼠滾動*/
-  position:relative;
   width:100%;
+  height:40%;
+  display:flex;
+  justify-content: center;
+  position: relative;
+  left:0;
+  top:120px;
+  padding: 100px;
+}
+
+.quotes .overlay{ /*加入遮色片*/
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height:100%;
 }
 
 .quote-inner{
   color:white;
   text-align:center;
+  z-index: 10;
 }
 
 .quote-inner h3{
-  font-size: 29px;
+  font-size: 24px;
   text-transform: capitalize;
 }
 
 .quote-inner p{
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 12px;
+  text-align: left;
 }
 
 .quote-inner a{
@@ -390,7 +431,7 @@ h3.resume-subtitle {
 }
 
 .quote-inner a:hover { /*pseudo-class 偽元素設定，使滑鼠效果產生*/
-  background: #000;
+  background: #EFB21E;
   color: #fff;
   /*語法指定特定的瀏覽器使用，解決相容性問題*/
   -webkit-transition: all .4s linear; /*Google Chrome & Safari*/
@@ -400,23 +441,16 @@ h3.resume-subtitle {
   transition: all .4s linear;
 }
 
-/* ========== 08. Latest Work 設定 ========== */
+/* ========== 08. Portfolio 設定 ========== */
 .works{
-  background-color: #f7f7f7;
+  background-color: #f9f9f9;
 }
 
-.col-work{
-  float:left;
-  width:33.3333333333%;
-  padding: 0 15px;
+.card-img-top img{
+  height:250px;
 }
 
-.col-work h3{
-  text-align: center;
-  font-size:16px;
-}
-
-.col-work a{
+.card-img-top a{
   display:block;
   margin-bottom:14px;
   position:relative;
@@ -429,77 +463,55 @@ h3.resume-subtitle {
   transition: .2s linear;
 }
 
-.col-work a:hover{
+.card-img-top a:hover{
   box-shadow: 0 16px 22px 0 rgba(90,91,95,0.3);
-  top:-5px; /*z-index 往螢幕內是正值*/
+  top:-5px; 
 }
 
-/* ========== 09. Contact 設定 ========== 
-.contact-form{
-  width:65%;
-  margin: 0 auto;
+.card-title {
   text-align: center;
+  color:#003831;
+  font-weight: bold;
 }
 
-.contact-form .form-input:first-child,
-.contact-form .form-input:nth-child(2){
-  float:left;
-  width:50%;
-  padding: 0 15px;
-}
-
-.contact-form .form-input:nth-child(3) {
-  width: 100%;
-  padding: 0 15px;
-}
-
-.contact-form input.form-style{
-  width:100%;
-  border:none;
-  border-bottom: 1px solid black;
-  text-transform: capitalize;
-  padding-bottom: 19px;
-  margin-bottom: 12px;
-  outline:none;
-}
-
-.contact-form textarea{
-  width:100%;
-  border:none;
-  border-bottom: 1px solid #000;
-  outline:none;
-}
-
-.form-submit{
-  text-align:left;
-  padding: 0 15px;
-}
-
-.form-submit input {
+.card-body ul li {
+  list-style: disc;
+  color: #000;
   font-size: 16px;
-  text-transform: capitalize;
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 12px;
-  padding: 15px 60px;
-  margin-top: 16px;
-  margin-bottom: 14px;
-  cursor: pointer;
-  -webkit-transition: .4s linear;
-  -moz-transition: .4s linear;
-  -ms-transition: .4s linear;
-  -o-transition: .4s linear;
-  transition: .4s linear;
+  line-height: 28px;
 }
 
-.form-submit input:hover {
-  background-color: #000;
-  color: #fff;
-}*/
+.circle{
+  width: 50px;
+  height:50px;
+  background-color: #EFB21E;
+  border-radius:50%;
+  margin:0 auto;
+}
 
-/* ========== 10. Footer 設定 ========== */
+.card-footer i{
+  position: relative;
+  top:15px;
+  left:15px;
+  font-size:20px;
+}
+
+.card-footer .circle a{
+  color:black;
+}
+
+.card-footer .circle a:hover{
+  color:white;
+}
+
+/* ========== 9. Footer 設定 ========== */
 footer {
-  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top:120px;
+  padding: 40px 0;
   background-color: #000;
   color: #fff;
   text-align: center;
