@@ -24,7 +24,3 @@ Vergangenheit ist Geschichte, Zukunft ist Geheimnis, und jeder Augenblick ein Ge
 ## Latest Work
 a portfolio during the works (You can click each to know more.)  
 工作專案成果，你可以點擊每個選項來查看
-
-## More Things
-A simple scoreboard (by JavaScript)  
-運用 JavaScript 打造的互動計分版
