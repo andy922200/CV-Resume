@@ -412,7 +412,7 @@ h3.resume-subtitle {
   position: relative;
   left:0;
   top:120px;
-  padding: 100px;
+  margin-top:80px;
 }
 
 .quotes .overlay{ /*加入遮色片*/
