@@ -1,0 +1,66 @@
+@media (max-width: 576px) {
+  .header{
+    .menu {
+      /*隱藏選單*/
+      max-height: 0px;
+      overflow: hidden;
+		  /*漸變效果*/
+      transition: max-height 2.3s;
+      margin-top: 1px;
+      /*絕對定位疊在網頁上*/
+      position: absolute;
+      z-index: 100;
+      top: 90px;
+      left: 0;
+   	  right: 0;
+      background: rgb(49, 49, 49);
+      text-align: center;
+      li{
+        float: none;
+        a{
+          font-size:16px;
+          transition: all 0.3s;
+          color:$default-background-color;
+          &:hover{
+            background: $default-background-color;
+            color:$default-font-color;
+          }
+        }
+      }
+    }
+    /*按鍵位置*/
+	  .showMenu{
+      display:block;
+      float: right;
+      margin: 1em;
+      font-size:$default-font-size;
+      color:$default-background-color;
+    }
+  }
+  /*jQ點擊後動態在 body 加上 class */
+  .menu-show .menu{
+    max-height: 400px
+  }
+}
+
+@media (max-width: 465px) {
+  .service-content{
+    i{
+      color:#EFB21E;
+      font-size: $default-font-size*2.5;
+      line-height: 46px;
+    }
+    li{
+      font-size: $default-font-size*0.75;
+    }
+    h3{
+      color:#003831;
+      font-weight: bold;
+      font-size: $default-font-size*0.875;
+      letter-spacing: 1px;
+      margin-top: 13px;
+      margin-bottom: 8px;
+      text-transform: capitalize;
+    }
+  }
+}

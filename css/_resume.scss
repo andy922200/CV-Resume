@@ -1,0 +1,53 @@
+.resume{
+  background-color: #f9f9f9;
+  h2{
+    color:#003831;
+  }
+  .col-horizontal {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #767676;
+    &:last-child{ /*用偽元素選取特定欄位*/
+      border-bottom: 0;
+    }
+  }
+  .resume-subtitle {
+    color:#003831;
+    font-weight: bold;
+    font-size: $default-font-size*1.5;
+    margin-left: 15px;
+    margin-top: 12px;
+    text-transform: capitalize;
+  }
+  .col-horizontal .col-item {
+    float: left;
+    width: 50%;
+    padding: 0 15px;
+  }
+  .experience-year {
+    background-color: #EFB21E;
+    color: $default-background-color;
+    display: inline-block;
+    padding: 4px 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .resume-detail {
+    h4{
+      font-size: $default-font-size;
+      line-height: 30px;
+      text-transform: capitalize;
+    }
+    h6{
+      font-size: $default-font-size;
+      margin-bottom: 9px;
+      text-transform: capitalize;
+    }
+    li{
+      font-size: 13px;
+      line-height: 24px;
+    }
+  }
+  .resumeButtons{
+    margin:20px auto;
+  }
+}

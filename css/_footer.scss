@@ -1,0 +1,28 @@
+footer {
+  position: relative;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top:120px;
+  padding: 40px 0;
+  background-color: $default-font-color;
+  color: $default-background-color;
+  text-align: center;
+  .footer-content {
+    p{
+      line-height: 22px;
+    }
+  }
+  .footer-social-icon{
+    a{
+      i{
+        color: $default-background-color;
+        display: inline-block; /*圖示要標成物件，才能排版*/
+        font-size: $default-font-size*1.125;
+        line-height: 20px;
+        margin-top: 15px;
+        margin-right: 15px;
+      }
+    }
+  }
+}

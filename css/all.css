@@ -1,0 +1,564 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+  line-height: 1.42857;
+  color: black;
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 36.8px;
+  line-height: 60px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a, a:hover, a:focus {
+  padding: 0px;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  margin: 20px auto;
+  position: relative;
+  top: 120px;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  max-height: 100px;
+  z-index: 20;
+  background-color: #003831;
+}
+
+.header .showMenu {
+  display: none;
+}
+
+.header .menu li {
+  display: inline-block;
+}
+
+.header .menu li a {
+  color: #fff;
+  text-transform: capitalize;
+  display: block;
+  padding: 25px 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header .menu li a:hover {
+  color: gray;
+}
+
+.home_bg {
+  background-image: url(../images/topImage.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  left: 0;
+  top: 100px;
+  padding: 100px;
+}
+
+.overlay {
+  /*加入遮色片*/
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  color: white;
+  text-align: center;
+  z-index: 10;
+}
+
+.content h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.content h5 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content a {
+  color: #fff;
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 32px;
+  margin-right: 14px;
+}
+
+.content .social_icons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.about_me {
+  background-color: #f9f9f9;
+}
+
+.about_me h2 {
+  color: #003831;
+}
+
+.about_me .col-left, .about_me .col-right {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.about_me .avatar img {
+  margin: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.about_me .personal-info h3 {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.about_me .description {
+  margin: 10px auto;
+}
+
+.about_me .description p {
+  margin: 5px 0px;
+  font-size: 16px;
+}
+
+.about_me .description li {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+
+.about_me .description a:hover {
+  color: blue;
+}
+
+.about_me .download_cv, .about_me .button-group .visitMyBLog {
+  margin: 20px 0px;
+  display: inline-block;
+}
+
+.about_me .button-group {
+  margin: 20px 0px;
+}
+
+.about_me .button-group a {
+  display: block;
+  color: black;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px 30px;
+  text-transform: capitalize;
+}
+
+.about_me .button-group a:hover {
+  background: #EFB21E;
+  color: #fff;
+  /*語法指定特定的瀏覽器使用，解決相容性問題*/
+  -webkit-transition: all .4s linear;
+  /*Google Chrome & Safari*/
+  /*Firefox*/
+  /*IE*/
+  /*Opera*/
+  transition: all .4s linear;
+}
+
+.my_service {
+  background-color: #fff;
+}
+
+.my_service .serviceTopTitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.my_service .service-content {
+  float: left;
+  width: 33.33333333%;
+  padding: 10px;
+}
+
+.my_service .service-content i {
+  color: #EFB21E;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.my_service .service-content h3 {
+  color: #003831;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-top: 13px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.my_service .service-content li {
+  list-style: disc;
+  color: #000;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.resume {
+  background-color: #f9f9f9;
+}
+
+.resume h2 {
+  color: #003831;
+}
+
+.resume .col-horizontal {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #767676;
+}
+
+.resume .col-horizontal:last-child {
+  /*用偽元素選取特定欄位*/
+  border-bottom: 0;
+}
+
+.resume .resume-subtitle {
+  color: #003831;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 15px;
+  margin-top: 12px;
+  text-transform: capitalize;
+}
+
+.resume .col-horizontal .col-item {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.resume .experience-year {
+  background-color: #EFB21E;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.resume .resume-detail h4 {
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+
+.resume .resume-detail h6 {
+  font-size: 16px;
+  margin-bottom: 9px;
+  text-transform: capitalize;
+}
+
+.resume .resume-detail li {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.resume .resumeButtons {
+  margin: 20px auto;
+}
+
+.quotes {
+  background-image: url(../images/quote.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*讓圖片看起來會隨著滑鼠滾動*/
+  width: 100%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  left: 0;
+  top: 120px;
+  margin-top: 80px;
+}
+
+.quotes .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.quotes .quote-inner {
+  margin-top: 50px;
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+}
+
+.quotes .quote-inner h3 {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.quotes .quote-inner p {
+  font-size: 16px;
+  margin-top: 12px;
+  text-align: left;
+}
+
+.quotes .quote-inner a {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 11px;
+  padding: 12px 49px;
+  display: inline-block;
+  margin-top: 22px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.quotes .quote-inner a:hover {
+  background: #EFB21E;
+  color: #fff;
+  /*語法指定特定的瀏覽器使用，解決相容性問題*/
+  -webkit-transition: all .4s linear;
+  /*Google Chrome & Safari*/
+  /*Firefox*/
+  /*IE*/
+  /*Opera*/
+  transition: all .4s linear;
+}
+
+.works {
+  background-color: #f9f9f9;
+}
+
+.works .card-img-top img {
+  height: 250px;
+}
+
+.works .card-img-top a {
+  display: block;
+  margin-bottom: 14px;
+  position: relative;
+  top: 0;
+  left: 0;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.works .card-img-top a:hover {
+  -webkit-box-shadow: 0 16px 22px 0 rgba(90, 91, 95, 0.3);
+          box-shadow: 0 16px 22px 0 rgba(90, 91, 95, 0.3);
+  top: -5px;
+}
+
+.works .card-title {
+  text-align: center;
+  color: #003831;
+  font-weight: bold;
+}
+
+.works .card-body ul li {
+  list-style: disc;
+  color: black;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.works .circle {
+  width: 50px;
+  height: 50px;
+  background-color: #EFB21E;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.works .card-footer i {
+  position: relative;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+}
+
+.works .card-footer .circle a {
+  color: black;
+}
+
+.works .card-footer .circle a:hover {
+  color: #fff;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 120px;
+  padding: 40px 0;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+}
+
+footer .footer-content p {
+  line-height: 22px;
+}
+
+footer .footer-social-icon a i {
+  color: #fff;
+  display: inline-block;
+  /*圖示要標成物件，才能排版*/
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+@media (max-width: 576px) {
+  .header {
+    /*按鍵位置*/
+  }
+  .header .menu {
+    /*隱藏選單*/
+    max-height: 0px;
+    overflow: hidden;
+    /*漸變效果*/
+    -webkit-transition: max-height 2.3s;
+    transition: max-height 2.3s;
+    margin-top: 1px;
+    /*絕對定位疊在網頁上*/
+    position: absolute;
+    z-index: 100;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background: #313131;
+    text-align: center;
+  }
+  .header .menu li {
+    float: none;
+  }
+  .header .menu li a {
+    font-size: 16px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #fff;
+  }
+  .header .menu li a:hover {
+    background: #fff;
+    color: black;
+  }
+  .header .showMenu {
+    display: block;
+    float: right;
+    margin: 1em;
+    font-size: 16px;
+    color: #fff;
+  }
+  /*jQ點擊後動態在 body 加上 class */
+  .menu-show .menu {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 465px) {
+  .service-content i {
+    color: #EFB21E;
+    font-size: 40px;
+    line-height: 46px;
+  }
+  .service-content li {
+    font-size: 12px;
+  }
+  .service-content h3 {
+    color: #003831;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 13px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+  }
+}
+/*# sourceMappingURL=all.css.map */
