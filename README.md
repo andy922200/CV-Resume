@@ -14,9 +14,12 @@ Languages, knowledge & skills and certificates
 ### Education 教育程度
 * 2010~2014 NTHU, Taiwan 台灣清華大學
 * 2018~2019 Newcastle University, United Kingdom 英國紐卡斯爾大學
+
 ### Experience 工作經驗
-* 2015~2017 FPC, Taiwan 台灣塑膠工業股份有限公司
-* 2010~ Now 國中小數學家教
+* 2020 Aimazing Front-End Developer
+* 2015~ Now SMLPoints Blogger
+* 2015~ 2017 FPC, Taiwan 台灣塑膠工業股份有限公司
+* 2010~ 2019 高中、國中、國小數學家教
 
 ## My Quote
 Vergangenheit ist Geschichte, Zukunft ist Geheimnis, und jeder Augenblick ein Geschenk.
