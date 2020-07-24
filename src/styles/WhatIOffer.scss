@@ -1,0 +1,56 @@
+@import "variables";
+@import "mobile";
+
+.what-I-Offer{
+  .what-I-Offer__title{
+    margin: 20px 0px 10px 0px;
+    font-size: 32px;
+    @include mobile{
+      font-size:26px;
+    }
+  }
+  .what-I-Offer__subtitle{
+    width:100%;
+    margin:10px 0px 20px 0px;
+  }
+  .service-wrapper{
+    display: flex;
+    flex-wrap:wrap;
+    margin-bottom: 10px;
+  }
+  .service-content{
+    width:33.33333%;
+    text-align: left;
+    @include tablet{
+      width:50%;
+      text-align: center;
+    }
+    @include mobile{
+      width:100%;
+      text-align: center;
+    }
+    .service-content__icon{
+      color:#EFB21E;
+      font-size: $default-font-size*2.5;
+      line-height: 46px;
+    }
+    h3{
+      color:#003831;
+      font-weight: bold;
+      font-size: $default-font-size*1.25;
+      letter-spacing: 1px;
+      margin-top: 13px;
+      margin-bottom: 8px;
+      text-transform: capitalize;
+    }
+    ul{
+      padding-left:0px;
+    }
+    li{
+      list-style: none;
+      color: $black;
+      font-size: $default-font-size;
+      line-height: 28px;
+    }
+  }
+}

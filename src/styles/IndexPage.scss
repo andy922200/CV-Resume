@@ -1,0 +1,55 @@
+@import "variables";
+@import "mobile";
+@import "utilities";
+
+.indexPage{
+  .indexPage__landingArea{
+    background-image: url(../assets/dark_layout.png),url(../assets/topImage.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 14em 0 14em;
+    color:$white;
+    @include mobile{
+      padding: 10em 0 10em;
+    }
+    .social_icons{
+      margin:10px 0px;
+      display:flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      .social_icon{
+        padding-right: 28px;
+        @include mobile{
+          padding-right:16px;
+        }
+        a{
+          color:$white;
+          font-size: 36px;
+          @include mobile{
+            font-size: 28px;
+          }
+        }
+        .icon__title{
+          display: none
+        }
+        &:hover{
+          .icon__title{
+            display:block;
+          }
+        }
+      }
+    }
+    .resumeButtons{
+      .btn-outline--lightBlue{
+        color:$light-blue;
+        border-color:$light-blue;
+        &:hover{
+          color:$white;
+          background-color:$light-blue;
+          border-color: $light-blue;
+        }
+      }
+    }
+  }
+}

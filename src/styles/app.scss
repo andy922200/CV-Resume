@@ -1,0 +1,13 @@
+@import "variables";
+@import "utilities";
+
+.app-default-class{
+  font-family: $font-family-for-all-platforms;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $black;
+  .container-fluid--noPadding{
+    padding:0px;
+  }
+}
