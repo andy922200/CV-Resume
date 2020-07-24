@@ -10,7 +10,8 @@
               Software Developer, Blogger and Traveller
             </h3>
             <h5 class="thirdLevelTitle title--format">
-              Independent, Sensitive and immersed in Natural & Programming Languages
+              Independent, Sensitive and immersed in Natural & Programming
+              Languages
             </h5>
             <div class="social_icons">
               <div
@@ -25,8 +26,13 @@
               </div>
             </div>
             <div class="resumeButtons d-flex justify-content-center">
-              <a target="_blank" href="https://www.cakeresume.com/andy0922ucs-engineer-en">
-                <button class="btn btn-outline--lightBlue m-2">Download CV</button>
+              <a
+                target="_blank"
+                href="https://www.cakeresume.com/andy0922ucs-engineer-en"
+              >
+                <button class="btn btn-outline--lightBlue m-2">
+                  Download CV
+                </button>
               </a>
             </div>
           </div>
@@ -38,6 +44,7 @@
         <div class="col-12">
           <About />
           <WhatIOffer />
+          <Portfolio />
         </div>
       </div>
     </div>
@@ -48,10 +55,11 @@
 import Navbar from "./../components/Navbar";
 import About from "./../components/About";
 import WhatIOffer from "./../components/WhatIOffer";
+import Portfolio from "./../components/Portfolio";
 
 export default {
   name: "IndexPage",
-  components: { Navbar, About, WhatIOffer },
+  components: { Navbar, About, WhatIOffer, Portfolio },
   data() {
     return {
       socialIcons: [

@@ -3,14 +3,25 @@
     <div class="row">
       <div class="col-12">
         <h3 class="what-I-Offer__title">What I Offer</h3>
-        <div v-for="(service,index) in services" :key="index" class="service-wrapper">
-          <h4 class="what-I-Offer__subtitle">{{service.title}}</h4>
-          <div class="service-content" v-for="(object,index) in service.data" :key="index">
-            <font-awesome-icon :icon="['fas', object.iconProp]" class="service-content__icon"/>
-            <h3>{{object.name}}</h3>
+        <div
+          v-for="(service, index) in services"
+          :key="index"
+          class="service-wrapper"
+        >
+          <h4 class="what-I-Offer__subtitle">{{ service.title }}</h4>
+          <div
+            class="service-content"
+            v-for="(object, index) in service.data"
+            :key="index"
+          >
+            <font-awesome-icon
+              :icon="['fas', object.iconProp]"
+              class="service-content__icon"
+            />
+            <h3>{{ object.name }}</h3>
             <ul>
-              <li v-for="(item,index) in object.items" :key="index">
-                {{item}}
+              <li v-for="(item, index) in object.items" :key="index">
+                {{ item }}
               </li>
             </ul>
           </div>
@@ -22,55 +33,72 @@
 
 <script>
 export default {
-  name:"What-I-Offer",
-  data(){
+  name: "What-I-Offer",
+  data() {
     return {
-      services:[
+      services: [
         {
-          title:"Programming Languages",
-          data:
-          [
+          title: "Programming Languages",
+          data: [
             {
-              name:"Front-End",
-              iconProp:"file-code",
-              items:["HTML5 / CSS3 / SCSS","JavaScript ES6","Vue.js / Vuex / Vue Router","RWD","Chrome Extension"]
+              name: "Front-End",
+              iconProp: "file-code",
+              items: [
+                "HTML5 / CSS3 / SCSS",
+                "JavaScript ES6",
+                "Vue.js / Vuex / Vue Router",
+                "RWD",
+                "Chrome Extension"
+              ]
             },
             {
-              name:"Back-End",
-              iconProp:"server",
-              items:["Node.js","MongoDB","Restful API","MySQL"]
+              name: "Back-End",
+              iconProp: "server",
+              items: ["Node.js", "MongoDB", "Restful API", "MySQL"]
             },
             {
-              name:"Skills",
-              iconProp:"tasks",
-              items:["Deployment","Google Analytics / Marketing","Git & Terminal"]
+              name: "Skills",
+              iconProp: "tasks",
+              items: [
+                "Deployment",
+                "Google Analytics / Marketing",
+                "Git & Terminal"
+              ]
             }
           ]
         },
         {
-          title:"Others",
-          data:[
+          title: "Others",
+          data: [
             {
-              name:"Natural Languages",
-              iconProp:"language",
-              items:["Chinese - Native","English - IELTS 6.5 / 9","Taiwanese - Native","German - B1"]
+              name: "Natural Languages",
+              iconProp: "language",
+              items: [
+                "Chinese - Native",
+                "English - IELTS 6.5 / 9",
+                "Taiwanese - Native",
+                "German - B1"
+              ]
             },
             {
-              name:"Knowledge",
-              iconProp:"magnet",
-              items:["Cooperation","Communication","Microsoft Office"]
+              name: "Knowledge",
+              iconProp: "magnet",
+              items: ["Cooperation", "Communication", "Microsoft Office"]
             },
             {
-              name:"Certificate",
-              iconProp:"certificate",
-              items:["9 issued by TABF","4 issued by IATA and Examination Yuan"]
-            },
+              name: "Certificate",
+              iconProp: "certificate",
+              items: [
+                "9 issued by TABF",
+                "4 issued by IATA and Examination Yuan"
+              ]
+            }
           ]
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped src="../styles/WhatIOffer.scss"></style>

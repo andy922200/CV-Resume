@@ -11,7 +11,7 @@ import {
   faInstagram,
   faGithub,
   faWordpressSimple,
-  faLinkedinIn,
+  faLinkedinIn
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faInbox,
@@ -21,6 +21,9 @@ import {
   faLanguage,
   faMagnet,
   faCertificate,
+  faExternalLinkAlt,
+  faCheck,
+  faWrench
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
@@ -36,7 +39,10 @@ library.add(
   faTasks,
   faLanguage,
   faMagnet,
-  faCertificate
+  faCertificate,
+  faExternalLinkAlt,
+  faCheck,
+  faWrench
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 // import Bootstrap-Vue
