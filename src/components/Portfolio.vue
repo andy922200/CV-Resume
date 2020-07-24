@@ -3,71 +3,59 @@
     <div class="row">
       <div class="col-12">
         <h3 class="portfolio__title">Portfolio</h3>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              v-for="(project, index) in projects"
-              :key="index"
-            >
-              <div class="card">
-                <img
-                  :src="`${project.thumb_img}`"
-                  :alt="`port-folio-${index}`"
-                  class="card__img"
+        <div class="cards-wrapper">
+          <div class="card" v-for="(project, index) in projects" :key="index">
+            <img
+              :src="`${project.thumb_img}`"
+              :alt="`port-folio-${index}`"
+              class="card__img"
+            />
+
+            <div class="card__body">
+              <h3 class="card__body__title">{{ project.title }}</h3>
+              <span
+                class="card__body__finishedTime"
+                :class="
+                  project.isFinished ? 'card__body__finishedTime--blue' : ''
+                "
+                >{{ project.finished_time }}</span
+              >
+              <span>
+                <font-awesome-icon
+                  v-if="project.isFinished"
+                  :icon="['fas', 'check']"
+                  class="card-body__icon card-body__icon--check"
                 />
+                <font-awesome-icon
+                  v-else
+                  :icon="['fas', 'wrench']"
+                  class="card-body__icon card-body__icon--wrench"
+                />
+              </span>
+              <div class="card-text">
+                <ul v-for="(item, index) in project.listItems" :key="index">
+                  <li>{{ item }}</li>
+                </ul>
+              </div>
+            </div>
 
-                <div class="card__body">
-                  <h3 class="card__body__title">{{ project.title }}</h3>
-                  <div class="card-text">
-                    <ul v-for="(item, index) in project.listItems" :key="index">
-                      <li>{{ item }}</li>
-                    </ul>
-                  </div>
-                  <span
-                    class="card__body__finishedTime"
-                    :class="
-                      project.isFinished ? 'card__body__finishedTime--blue' : ''
-                    "
-                    >{{ project.finished_time }}</span
-                  >
-                  <span>
+            <div class="card-footer">
+              <div class="row">
+                <div class="circle">
+                  <a target="_blank" :href="project.web_url">
                     <font-awesome-icon
-                      v-if="project.isFinished"
-                      :icon="['fas', 'check']"
-                      class="card-body__icon card-body__icon--check"
+                      :icon="['fas', 'external-link-alt']"
+                      class="card-footer__icon"
                     />
-                    <font-awesome-icon
-                      v-else
-                      :icon="['fas', 'wrench']"
-                      class="card-body__icon card-body__icon--wrench"
-                    />
-                  </span>
+                  </a>
                 </div>
-
-                <div class="card-footer">
-                  <div class="row">
-                    <div class="circle">
-                      <a target="_blank" :href="project.web_url">
-                        <font-awesome-icon
-                          :icon="['fas', 'external-link-alt']"
-                          class="card-footer__icon"
-                        />
-                      </a>
-                    </div>
-                    <div class="circle">
-                      <a
-                        target="_blank"
-                        v-if="project.github_url"
-                        :href="project.github_url"
-                      >
-                        <font-awesome-icon
-                          :icon="['fab', 'github']"
-                          class="card-footer__icon"
-                        />
-                      </a>
-                    </div>
-                  </div>
+                <div class="circle" v-if="project.github_url">
+                  <a target="_blank" :href="project.github_url">
+                    <font-awesome-icon
+                      :icon="['fab', 'github']"
+                      class="card-footer__icon"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -79,11 +67,8 @@
 </template>
 
 <script>
-import { SwiperInstance } from "./../utils/mixins";
-
 export default {
   name: "Portfolio",
-  mixins: [SwiperInstance],
   data() {
     return {
       projects: [
@@ -187,29 +172,8 @@ export default {
           web_url: "https://tinyurl.com/y6kyxfn8",
           github_url: null
         }
-      ],
-      swiperOptions: {
-        effect: "coverflow",
-        slidesPerView: "auto",
-        centeredSlides: true,
-        initialSlide: 0,
-        coverflowEffect: {
-          slideShadows: true,
-          rotate: 20,
-          stretch: 0,
-          depth: 350,
-          modifier: 2
-        }
-      }
+      ]
     };
-  },
-  mounted() {
-    this.initSwiper();
-  },
-  methods: {
-    initSwiper() {
-      this.createNewSwiper(".swiper-container", this.swiperOptions);
-    }
   }
 };
 </script>
