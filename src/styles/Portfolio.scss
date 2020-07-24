@@ -32,6 +32,11 @@
     height: 300px;
     object-fit: cover;
     -o-object-fit: cover;
+    &:hover{
+      transform: translateY(-10px);
+      box-shadow: 0 0 6px #999;
+      transition: all .5s ease-out;
+    }
   }
   .card__body {
     padding: 15px 20px;
