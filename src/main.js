@@ -52,6 +52,10 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
 
+// import VueCarousel
+import VueCarousel from "vue-carousel";
+Vue.use(VueCarousel);
+
 Vue.config.productionTip = false;
 
 new Vue({

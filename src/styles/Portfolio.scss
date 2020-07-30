@@ -1,6 +1,19 @@
 @import "variables";
 @import "mobile";
 
+.swiper-container {
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
 .portfolio{
   .portfolio__title{
     margin: 10px 0px 20px 0px;
@@ -17,15 +30,11 @@
 }
 
 .card {
-  width: 30%;
+  width: 100%;
   margin: 0px 10px 10px 0px;
   border-radius: 8px;
   background: white;
   overflow: hidden;
-  @include bigTablet{
-    width:100%;
-    margin-bottom: 10px;
-  }
   .card__img {
     display: block;
     width: 100%;

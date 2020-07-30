@@ -3,70 +3,83 @@
     <div class="row">
       <div class="col-12">
         <h3 class="portfolio__title">Portfolio</h3>
-        <div class="cards-wrapper">
-          <div class="card" v-for="(project, index) in projects" :key="index">
-            <img
-              :src="`${project.thumb_img}`"
-              :alt="`port-folio-${index}`"
-              class="card__img"
-            />
+        <carousel
+          :per-page="1"
+          :perPageCustom="[
+            [576, 1],
+            [768, 2],
+            [1024, 4]
+          ]"
+          :mouse-drag="true"
+          :navigationEnabled="windowWidth >= 576 ? true : false"
+        >
+          <slide v-for="(project, index) in projects" :key="index">
+            <div class="card card-test">
+              <img
+                :src="`${project.thumb_img}`"
+                :alt="`port-folio-${index}`"
+                class="card__img"
+              />
 
-            <div class="card__body">
-              <h3 class="card__body__title">{{ project.title }}</h3>
-              <span
-                class="card__body__finishedTime"
-                :class="
-                  project.isFinished ? 'card__body__finishedTime--blue' : ''
-                "
-                >{{ project.finished_time }}</span
-              >
-              <span>
-                <font-awesome-icon
-                  v-if="project.isFinished"
-                  :icon="['fas', 'check']"
-                  class="card-body__icon card-body__icon--check"
-                />
-                <font-awesome-icon
-                  v-else
-                  :icon="['fas', 'wrench']"
-                  class="card-body__icon card-body__icon--wrench"
-                />
-              </span>
-              <div class="card-text">
-                <ul v-for="(item, index) in project.listItems" :key="index">
-                  <li>{{ item }}</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="card-footer">
-              <div class="row">
-                <div class="circle">
-                  <a target="_blank" :href="project.web_url">
-                    <font-awesome-icon
-                      :icon="['fas', 'external-link-alt']"
-                      class="card-footer__icon"
-                    />
-                  </a>
-                </div>
-                <div class="circle" v-if="project.github_url">
-                  <a target="_blank" :href="project.github_url">
-                    <font-awesome-icon
-                      :icon="['fab', 'github']"
-                      class="card-footer__icon"
-                    />
-                  </a>
+              <div class="card__body">
+                <h3 class="card__body__title">{{ project.title }}</h3>
+                <span
+                  class="card__body__finishedTime"
+                  :class="
+                    project.isFinished ? 'card__body__finishedTime--blue' : ''
+                  "
+                  >{{ project.finished_time }}</span
+                >
+                <span>
+                  <font-awesome-icon
+                    v-if="project.isFinished"
+                    :icon="['fas', 'check']"
+                    class="card-body__icon card-body__icon--check"
+                  />
+                  <font-awesome-icon
+                    v-else
+                    :icon="['fas', 'wrench']"
+                    class="card-body__icon card-body__icon--wrench"
+                  />
+                </span>
+                <div class="card-text">
+                  <ul v-for="(item, index) in project.listItems" :key="index">
+                    <li>{{ item }}</li>
+                  </ul>
                 </div>
               </div>
+
+              <div class="card-footer">
+                <div class="row">
+                  <div class="circle">
+                    <a target="_blank" :href="project.web_url">
+                      <font-awesome-icon
+                        :icon="['fas', 'external-link-alt']"
+                        class="card-footer__icon"
+                      />
+                    </a>
+                  </div>
+                  <div class="circle" v-if="project.github_url">
+                    <a target="_blank" :href="project.github_url">
+                      <font-awesome-icon
+                        :icon="['fab', 'github']"
+                        class="card-footer__icon"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </slide>
+        </carousel>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Portfolio",
   data() {
@@ -174,6 +187,9 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    ...mapGetters(["windowWidth"])
   }
 };
 </script>
