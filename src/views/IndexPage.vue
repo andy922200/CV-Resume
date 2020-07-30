@@ -48,6 +48,7 @@
         </div>
       </div>
     </div>
+    <Footer :social-icons="socialIcons"/>
   </div>
 </template>
 
@@ -56,10 +57,11 @@ import Navbar from "./../components/Navbar";
 import About from "./../components/About";
 import WhatIOffer from "./../components/WhatIOffer";
 import Portfolio from "./../components/Portfolio";
+import Footer from "./../components/Footer"
 
 export default {
   name: "IndexPage",
-  components: { Navbar, About, WhatIOffer, Portfolio },
+  components: { Navbar, About, WhatIOffer, Portfolio, Footer },
   data() {
     return {
       socialIcons: [

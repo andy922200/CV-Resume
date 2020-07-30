@@ -1,19 +1,6 @@
 @import "variables";
 @import "mobile";
 
-.swiper-container {
-  width: 300px;
-  height: 300px;
-  padding: 50px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-}
-
 .portfolio{
   .portfolio__title{
     margin: 10px 0px 20px 0px;
@@ -22,10 +9,8 @@
       font-size:26px;
     }
   }
-  .cards-wrapper{
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
+  .carousel-custom{
+    margin-bottom: 16px;
   }
 }
 

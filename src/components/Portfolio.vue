@@ -12,9 +12,10 @@
           ]"
           :mouse-drag="true"
           :navigationEnabled="windowWidth >= 576 ? true : false"
+          class="carousel-custom"
         >
           <slide v-for="(project, index) in projects" :key="index">
-            <div class="card card-test">
+            <div class="card">
               <img
                 :src="`${project.thumb_img}`"
                 :alt="`port-folio-${index}`"
@@ -95,7 +96,7 @@ export default {
           github_url: "https://github.com/andy922200/Cocktails-Collections"
         },
         {
-          title: "Personal Experience Editor",
+          title: "Experience Editor",
           listItems: ["MySQL", "Vue.js", "JWT & Validation", "Offline Mode"],
           finished_time: "2020-07-21",
           isFinished: true,
@@ -114,7 +115,7 @@ export default {
             "https://github.com/andy922200/visa-requirements-for-tw-citizens"
         },
         {
-          title: "Real-time public chatroom",
+          title: "Real-time Chatroom",
           listItems: ["Vue.js", "MySQL", "JWT & Validation"],
           finished_time: "2020-02-06",
           isFinished: true,
