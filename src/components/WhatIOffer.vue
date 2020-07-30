@@ -48,6 +48,7 @@ export default {
                 "JavaScript ES6",
                 "Vue.js / Vuex / Vue Router",
                 "RWD",
+                "Gulp",
                 "Chrome Extension"
               ]
             },
