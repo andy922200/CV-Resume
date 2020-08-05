@@ -8,7 +8,7 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 14em 0 14em;
+    padding: 14em 0 14rem 0;
     color:$white;
     @include mobile{
       padding: 10em 0 10em;
@@ -19,9 +19,11 @@
       justify-content: center;
       flex-wrap: nowrap;
       .social_icon{
-        padding-right: 28px;
+        width:75px;
+        padding-right: 12px;
         @include mobile{
-          padding-right:16px;
+          width:50px;
+          padding-right:8px;
         }
         a{
           color:$white;
@@ -31,11 +33,12 @@
           }
         }
         .icon__title{
-          display: none
+          visibility: hidden;
+          padding-bottom: 0px;
         }
         &:hover{
           .icon__title{
-            display:block;
+            visibility: visible;
           }
         }
       }
