@@ -41,8 +41,14 @@ export default {
       openMobileNavItems: false
     };
   },
+  mounted() {
+    window.addEventListener("scroll", this.resetClickedStatus);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.resetClickedStatus);
+  },
   computed: {
-    ...mapGetters(["windowWidth"])
+    ...mapGetters(["windowWidth", "windowHeight"])
   },
   methods: {
     changeCurrentNavItem(item) {
@@ -54,6 +60,11 @@ export default {
         this.currentNavItem = "";
       } else {
         this.openMobileNavItems = true;
+      }
+    },
+    resetClickedStatus() {
+      if (window.scrollY === 0) {
+        this.currentNavItem = "";
       }
     }
   },

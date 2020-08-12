@@ -1,5 +1,6 @@
 <template>
   <div class="indexPage">
+    <ScrollTop />
     <div class="indexPage__landingArea">
       <Navbar />
       <div class="container">
@@ -53,6 +54,7 @@
 </template>
 
 <script>
+import ScrollTop from "./../components/ScrollTop";
 import Navbar from "./../components/Navbar";
 import About from "./../components/About";
 import WhatIOffer from "./../components/WhatIOffer";
@@ -61,7 +63,7 @@ import Footer from "./../components/Footer";
 
 export default {
   name: "IndexPage",
-  components: { Navbar, About, WhatIOffer, Portfolio, Footer },
+  components: { ScrollTop, Navbar, About, WhatIOffer, Portfolio, Footer },
   data() {
     return {
       socialIcons: [

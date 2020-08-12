@@ -11,7 +11,7 @@
     padding: 14em 0 14rem 0;
     color:$white;
     @include mobile{
-      padding: 10em 0 10em;
+      padding: 10em 0 8em;
     }
     .social_icons{
       margin:10px 0px;
@@ -35,6 +35,9 @@
         .icon__title{
           visibility: hidden;
           padding-bottom: 0px;
+          @include mobile{
+            display:none;
+          }
         }
         &:hover{
           .icon__title{

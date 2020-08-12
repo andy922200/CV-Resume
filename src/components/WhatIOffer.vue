@@ -7,6 +7,9 @@
           v-for="(service, index) in services"
           :key="index"
           class="service-wrapper"
+          :data-aos="index % 2 === 0 ? 'flip-up' : 'flip-down'"
+          :data-aos-once="true"
+          :data-aos-duration="1500"
         >
           <h4 class="what-I-Offer__subtitle">{{ service.title }}</h4>
           <div

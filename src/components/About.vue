@@ -7,7 +7,13 @@
           <img src="https://i.imgur.com/YB7BrfL.jpg" alt="avatar" />
         </div>
         <div class="description">
-          <p v-for="(item, index) in descriptions" :key="index">
+          <p
+            v-for="(item, index) in descriptions"
+            :key="index"
+            :data-aos="index % 2 === 0 ? 'fade-right' : 'fade-left'"
+            :data-aos-once="true"
+            :data-aos-duration="1000"
+          >
             {{ item.content }}
           </p>
         </div>
