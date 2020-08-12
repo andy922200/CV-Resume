@@ -23,7 +23,8 @@ import {
   faCertificate,
   faExternalLinkAlt,
   faCheck,
-  faWrench
+  faWrench,
+  faArrowUp
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
@@ -42,7 +43,8 @@ library.add(
   faCertificate,
   faExternalLinkAlt,
   faCheck,
-  faWrench
+  faWrench,
+  faArrowUp
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 // import Bootstrap-Vue
@@ -56,9 +58,16 @@ Vue.use(BootstrapVueIcons);
 import VueCarousel from "vue-carousel";
 Vue.use(VueCarousel);
 
+// import AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 Vue.config.productionTip = false;
 
 new Vue({
+  created() {
+    AOS.init();
+  },
   router,
   store,
   render: h => h(App)
