@@ -87,6 +87,15 @@ export default {
     return {
       projects: [
         {
+          title: "Front-End Dev Skills",
+          listItems: ["Layout","Template","Mockup"],
+          finished_time: "2020-08-31",
+          isFinished: false,
+          thumb_img: require("../assets/Website_Mockup.png"),
+          web_url: "https://andy922200.github.io/website-template-mockup/",
+          github_url: "https://github.com/andy922200/website-template-mockup"
+        },
+        {
           title: "Cocktails Collections",
           listItems: ["MySQL", "Vue.js", "JWT & Validation", "Payment API"],
           finished_time: "2020-07-24",
