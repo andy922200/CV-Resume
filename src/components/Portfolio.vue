@@ -88,7 +88,7 @@ export default {
       projects: [
         {
           title: "Front-End Dev Skills",
-          listItems: ["Layout","Template","Mockup"],
+          listItems: ["Layout", "Template", "Mockup"],
           finished_time: "2020-08-31",
           isFinished: false,
           thumb_img: require("../assets/Website_Mockup.png"),
