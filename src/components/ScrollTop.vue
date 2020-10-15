@@ -42,7 +42,7 @@ export default {
         // 將現有的位置扣除掉 speed 後，存成新的 scrollTop 數值，並更新 document.documentElement.scrollTop
         document.documentElement.scrollTop = document.body.scrollTop =
           currentView.scrollTop + speed;
-        // 抵達頂端後，清除計時器
+        // 抵達頂端後，清除計時器。
         if (currentView.scrollTop === 0) {
           clearInterval(timer);
         }
