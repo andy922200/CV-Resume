@@ -1,0 +1,23 @@
+@import "mixins";
+@import "mobile";
+
+.integrationTemplates{
+  .integrationTemplates__title{
+    margin: 20px 0px;
+    font-size: 32px;
+    width:100%;
+    @include mobile{
+      font-size:26px;
+    }
+  }
+
+  .card{
+    @include tablet{
+      margin-top: 8px;
+    }
+
+    .card-text-wrapper{
+      height: 60px;
+    }
+  }
+}

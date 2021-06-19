@@ -36,10 +36,16 @@
     padding: 15px 20px;
     font-weight: 600;
     text-align: center;
-    height:260px;
+    height:300px;
     h3{
       font-size: 1.25rem;
       line-height: 1.5;
+    }
+    .card__body__title-wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height:60px;
     }
     .card__body__title{
       color:#003831;

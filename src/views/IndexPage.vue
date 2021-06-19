@@ -45,6 +45,7 @@
         <div class="col-12">
           <About />
           <WhatIOffer />
+          <IntegrationTemplates />
           <Portfolio />
         </div>
       </div>
@@ -58,12 +59,21 @@ import ScrollTop from "./../components/ScrollTop";
 import Navbar from "./../components/Navbar";
 import About from "./../components/About";
 import WhatIOffer from "./../components/WhatIOffer";
+import IntegrationTemplates from "./../components/IntegrationTemplates.vue";
 import Portfolio from "./../components/Portfolio";
 import Footer from "./../components/Footer";
 
 export default {
   name: "IndexPage",
-  components: { ScrollTop, Navbar, About, WhatIOffer, Portfolio, Footer },
+  components: {
+    ScrollTop,
+    Navbar,
+    About,
+    WhatIOffer,
+    IntegrationTemplates,
+    Portfolio,
+    Footer
+  },
   data() {
     return {
       socialIcons: [

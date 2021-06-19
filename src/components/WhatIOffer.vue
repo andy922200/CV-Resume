@@ -47,10 +47,10 @@ export default {
               name: "Front-End",
               iconProp: "file-code",
               items: [
-                "HTML5 / CSS3 / SCSS",
-                "JavaScript ES6",
-                "Vue.js / Vuex / Vue Router",
-                "RWD",
+                "HTML5 / CSS3 ( SCSS )",
+                "JavaScript / TypeScript",
+                "Vue 2 & Vue 3 & Integration Templates",
+                "Responsive Web Design",
                 "Gulp",
                 "Chrome Extension"
               ]
@@ -58,7 +58,7 @@ export default {
             {
               name: "Back-End",
               iconProp: "server",
-              items: ["Node.js", "MongoDB", "Restful API", "MySQL"]
+              items: ["Node.js", "Restful API", "MongoDB", "MySQL"]
             },
             {
               name: "Skills",
@@ -87,7 +87,12 @@ export default {
             {
               name: "Knowledge",
               iconProp: "magnet",
-              items: ["Cooperation", "Communication", "Microsoft Office"]
+              items: [
+                "Over 1000 Posts on my blog",
+                "Cooperation",
+                "Communication",
+                "Microsoft Office"
+              ]
             },
             {
               name: "Certificate",

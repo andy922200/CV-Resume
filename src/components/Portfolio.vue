@@ -23,7 +23,9 @@
               />
 
               <div class="card__body">
-                <h3 class="card__body__title">{{ project.title }}</h3>
+                <div class="card__body__title-wrapper">
+                  <h3 class="card__body__title">{{ project.title }}</h3>
+                </div>
                 <span
                   class="card__body__finishedTime"
                   :class="
@@ -86,6 +88,36 @@ export default {
   data() {
     return {
       projects: [
+        {
+          title: "Taiwan Motel Search",
+          listItems: ["Vue 3", "TypeScript", "OpenLayers", "Prime Vue"],
+          finished_time: "2021-06-20",
+          isFinished: true,
+          thumb_img: require("../assets/taiwan-motel-search.jpg"),
+          web_url:
+            "https://andy922200.github.io/search-something-platform-taiwan/#/",
+          github_url:
+            "https://github.com/andy922200/search-something-platform-taiwan"
+        },
+        {
+          title: "Vue-Multi-Select",
+          listItems: ["Vue 2", "TypeScript", "Selector", "npm package"],
+          finished_time: "2021-04-19",
+          isFinished: true,
+          thumb_img: require("../assets/vue-multi-select.gif"),
+          web_url: "https://www.npmjs.com/package/@andy922200/vue-multi-select",
+          github_url: "https://github.com/andy922200/vue-multi-select"
+        },
+        {
+          title: "Vue-tw-zip-code-selector",
+          listItems: ["Vue 3", "TypeScript", "npm package"],
+          finished_time: "2021-04-14",
+          isFinished: true,
+          thumb_img: require("../assets/vue-tw-zip-code-selector.gif"),
+          web_url:
+            "https://www.npmjs.com/package/@andy922200/vue-tw-zip-code-selector",
+          github_url: "https://github.com/andy922200/vue-tw-zip-code-selector"
+        },
         {
           title: "Front-End Dev Skills",
           listItems: ["Layout", "Template", "Mockup"],
