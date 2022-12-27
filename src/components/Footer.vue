@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <p class="footer__content">
-      &copy; 2021 SMLPoints.com || All Rights Reserved.
+      &copy; 2022 SMLPoints.com || All Rights Reserved.
     </p>
     <ul class="footer__socialIcons">
       <li>

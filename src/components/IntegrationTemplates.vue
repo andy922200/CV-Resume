@@ -13,7 +13,7 @@
                 {{ item.description }}
               </p>
             </div>
-            <a :href="item.link" class="btn btn-secondary">
+            <a :href="item.link" target="_blank" class="btn btn-secondary">
               <font-awesome-icon
                 :icon="['fab', 'github']"
                 class="card-footer__icon"
@@ -32,6 +32,13 @@ export default {
   data() {
     return {
       templates: [
+        {
+          name: "vite-vue3-ts-template",
+          header: "Vite Vue3 TypeScript Template",
+          description:
+            "Vue3, Axios, dayjs, eslint, stylelint, typescript, jest, testcafe",
+          link: "https://github.com/andy922200/vite-vue3-ts-template"
+        },
         {
           name: "Dotnet5CoreMVCwithMultiVue",
           header: "Dotnet 5 Core MVC with Multi-Vue",
@@ -54,13 +61,6 @@ export default {
             "Vue 2, Vuetify, TypeScript, Jest, TestCafe, i18n, ESLint, StyleLint, Axios",
           link:
             "https://github.com/andy922200/vue-vuetify-typescript-eslint-babel-stylelint-integration"
-        },
-        {
-          name: "Vue2andVuetify",
-          header: "Vue 2 & Vuetify",
-          description: "Vue 2, Vuetify, ESLint, StyleLint, Axios",
-          link:
-            "https://github.com/andy922200/vue-vuetify-eslint-babel-stylelint-integration"
         },
         {
           name: "gulp4withBabel7",

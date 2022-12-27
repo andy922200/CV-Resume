@@ -47,11 +47,11 @@ export default {
               name: "Front-End",
               iconProp: "file-code",
               items: [
-                "HTML5 / CSS3 ( SCSS )",
+                "HTML5 / CSS / RWD",
                 "JavaScript / TypeScript",
                 "Vue 2 & Vue 3 & Integration Templates",
-                "Responsive Web Design",
-                "Gulp",
+                "Gulp / Webpack",
+                "Chart.js / EChart",
                 "Chrome Extension"
               ]
             },
