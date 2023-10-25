@@ -1,58 +1,58 @@
-@import "variables";
-@import "mobile";
-@import "utilities";
+@import 'variables';
+@import 'mobile';
+@import 'utilities';
 
-.indexPage{
-  .indexPage__landingArea{
-    background-image: url(../assets/dark_layout.png),url(../assets/topImage.jpg);
+.indexPage {
+  .indexPage__landingArea {
+    background-image: url(../assets/dark_layout.png), url(../assets/topImage.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 14em 0 14rem 0;
-    color:$white;
-    @include mobile{
+    color: $white;
+    @include mobile {
       padding: 10em 0 8em;
     }
-    .social_icons{
-      margin:10px 0px;
-      display:flex;
+    .social_icons {
+      margin: 10px 0px;
+      display: flex;
       justify-content: center;
       flex-wrap: nowrap;
-      .social_icon{
-        width:75px;
+      .social_icon {
+        width: 75px;
         padding-right: 12px;
-        @include mobile{
-          width:50px;
-          padding-right:8px;
+        @include mobile {
+          width: 50px;
+          padding-right: 8px;
         }
-        a{
-          color:$white;
+        a {
+          color: $white;
           font-size: 36px;
-          @include mobile{
+          @include mobile {
             font-size: 28px;
           }
         }
-        .icon__title{
+        .icon__title {
           visibility: hidden;
           padding-bottom: 0px;
-          @include mobile{
-            display:none;
+          @include mobile {
+            display: none;
           }
         }
-        &:hover{
-          .icon__title{
+        &:hover {
+          .icon__title {
             visibility: visible;
           }
         }
       }
     }
-    .resumeButtons{
-      .btn-outline--lightBlue{
-        color:$light-blue;
-        border-color:$light-blue;
-        &:hover{
-          color:$white;
-          background-color:$light-blue;
+    .resumeButtons {
+      .btn-outline--lightBlue {
+        color: $light-blue;
+        border-color: $light-blue;
+        &:hover {
+          color: $white;
+          background-color: $light-blue;
           border-color: $light-blue;
         }
       }

@@ -1,54 +1,56 @@
-@import "variables";
-@import "mobile";
+@import 'variables';
+@import 'mobile';
 
-.header{
-  position:absolute;
+.header {
+  position: absolute;
   width: 100%;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 2;
-  color:$black-on-icon;
-  .navbar__wrapper{
-    width:100%;
+  color: $black-on-icon;
+  .navbar__wrapper {
+    width: 100%;
     justify-content: flex-end;
-    flex-wrap:wrap;
-    @include mobile{
+    flex-wrap: wrap;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    @include mobile {
       justify-content: start;
     }
   }
-  .showMenu{
-    display:none;
-    @include mobile{
-      display:unset;
+  .showMenu {
+    display: none;
+    @include mobile {
+      display: unset;
       width: 100%;
     }
-    &.showMenu__icon{
+    &.showMenu__icon {
       font-size: 24px;
       text-decoration: none;
       text-align: left;
-      color:$white;
+      color: $white;
     }
   }
-  .menu{
-    &.mobile-active{
-      width:100%;
-      display:flex;
+  .menu {
+    &.mobile-active {
+      width: 100%;
+      display: flex;
       justify-content: center;
       flex-wrap: wrap;
       padding: 0px 0px 0px 10px;
     }
-    li{
-      display:inline-block;
+    li {
+      display: inline-block;
       text-align: right;
-      a{
-        color:$light-gray;
+      a {
+        color: $light-gray;
         text-transform: capitalize;
         text-decoration: none;
         display: block;
         padding: 10px 12px;
-        font-size:20px;
+        font-size: 20px;
         font-weight: bold;
-        &.button-layout{
+        &.button-layout {
           position: relative;
           margin-bottom: 0;
           padding: 0 1em;
@@ -59,8 +61,8 @@
           vertical-align: middle;
           border-radius: 30px;
         }
-        &:hover{
-          color:$white;
+        &:hover {
+          color: $white;
         }
       }
     }

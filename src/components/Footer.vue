@@ -1,16 +1,9 @@
 <template>
   <footer class="footer">
-    <p class="footer__content">
-      &copy; 2022 SMLPoints.com || All Rights Reserved.
-    </p>
+    <p class="footer__content">&copy; 2022 SMLPoints.com || All Rights Reserved.</p>
     <ul class="footer__socialIcons">
       <li>
-        <a
-          target="_blank"
-          v-for="(item, index) in socialIcons"
-          :key="index"
-          :href="item.url"
-        >
+        <a target="_blank" v-for="(item, index) in socialIcons" :key="index" :href="item.url">
           <font-awesome-icon :icon="['fab', item.iconProp]" />
         </a>
       </li>
@@ -20,13 +13,13 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: 'FooterComponent',
   props: {
     socialIcons: {
-      default: Array
-    }
-  }
-};
+      default: Array,
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped src="../styles/Footer.scss"></style>

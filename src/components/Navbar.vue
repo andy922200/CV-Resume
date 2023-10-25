@@ -3,7 +3,11 @@
     <nav class="navbar navbar-dark">
       <div class="navbar__wrapper d-flex">
         <a href="#" class="showMenu showMenu__icon" @click="triggerOpenMenu">
-          <b-icon icon="list"></b-icon>
+          <!-- <b-icon icon="list"></b-icon> -->
+          <font-awesome-icon
+            :icon="['fas', 'bars']"
+            class="card-body__icon card-body__icon--wrench"
+          />
         </a>
         <ul
           class="menu"
@@ -25,59 +29,57 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex'
 
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   data() {
     return {
       navItems: [
-        { title: "Home", prop: "home", isClicked: false },
-        { title: "About", prop: "about", isClicked: false },
-        { title: "What I Offer?", prop: "service", isClicked: false },
-        { title: "Portfolio", prop: "portfolio", isClicked: false }
+        { title: 'Home', prop: 'home', isClicked: false },
+        { title: 'About', prop: 'about', isClicked: false },
+        { title: 'What I Offer?', prop: 'service', isClicked: false },
+        { title: 'Portfolio', prop: 'portfolio', isClicked: false },
       ],
-      currentNavItem: "",
-      openMobileNavItems: false
-    };
+      currentNavItem: '',
+      openMobileNavItems: false,
+    }
   },
   mounted() {
-    window.addEventListener("scroll", this.resetClickedStatus);
+    window.addEventListener('scroll', this.resetClickedStatus)
   },
   destroyed() {
-    window.removeEventListener("scroll", this.resetClickedStatus);
+    window.removeEventListener('scroll', this.resetClickedStatus)
   },
   computed: {
-    ...mapGetters(["windowWidth", "windowHeight"])
+    ...mapGetters(['windowWidth', 'windowHeight']),
   },
   methods: {
     changeCurrentNavItem(item) {
-      this.currentNavItem = item;
+      this.currentNavItem = item
     },
     triggerOpenMenu() {
       if (this.openMobileNavItems) {
-        this.openMobileNavItems = false;
-        this.currentNavItem = "";
+        this.openMobileNavItems = false
+        this.currentNavItem = ''
       } else {
-        this.openMobileNavItems = true;
+        this.openMobileNavItems = true
       }
     },
     resetClickedStatus() {
       if (window.scrollY === 0) {
-        this.currentNavItem = "";
+        this.currentNavItem = ''
       }
-    }
+    },
   },
   watch: {
     currentNavItem() {
-      this.navItems.forEach(d => {
-        d.prop.includes(this.currentNavItem)
-          ? (d.isClicked = true)
-          : (d.isClicked = false);
-      });
-    }
-  }
-};
+      this.navItems.forEach((d) => {
+        d.prop.includes(this.currentNavItem) ? (d.isClicked = true) : (d.isClicked = false)
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped src="../styles/Navbar.scss"></style>

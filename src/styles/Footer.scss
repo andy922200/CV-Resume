@@ -1,33 +1,33 @@
-@import "variables";
-@import "mobile";
+@import 'variables';
+@import 'mobile';
 
-.footer{
+.footer {
   display: flex;
   justify-content: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   background-color: $black;
-  color:$white;
-  .footer__content{
-    width:100%;
+  color: $white;
+  .footer__content {
+    width: 100%;
     padding: 20px 10px;
     margin-bottom: 0px;
     font-size: 20px;
-    @include mobile{
+    @include mobile {
       font-size: 14px;
     }
   }
-  .footer__socialIcons{
+  .footer__socialIcons {
     padding-left: 0px;
     margin: 0px 0px 20px 0px;
-    li{
+    li {
       list-style: none;
     }
-    a{
-      text-decoration:none;
+    a {
+      text-decoration: none;
       font-size: 24px;
       margin-right: 16px;
-      color:$white;
-      @include mobile{
+      color: $white;
+      @include mobile {
         font-size: 20px;
       }
     }

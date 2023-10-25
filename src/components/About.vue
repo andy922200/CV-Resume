@@ -10,7 +10,7 @@
           <p
             v-for="(item, index) in descriptions"
             :key="index"
-            :data-aos="index % 2 === 0 ? 'fade-right' : 'fade-left'"
+            :data-aos="'fade-top'"
             :data-aos-once="true"
             :data-aos-duration="1000"
           >
@@ -24,23 +24,23 @@
 
 <script>
 export default {
-  name: "About",
+  name: 'About',
   data() {
     return {
       descriptions: [
         {
           content:
-            "I am passionate about technology and find my own accomplishments while developing a variety of web applications. I am taking all my efforts to gather more knowledge and skills all the time. They will be imprinted on my mind someday."
+            'I am passionate about technology and find my own accomplishments while developing a variety of web applications. I am taking all my efforts to gather more knowledge and skills all the time. They will be imprinted on my mind someday.',
         },
         {
           content:
-            "I have been working in a startup and an huge corporation, which is well-known in the traditional industry. In the fast-changing environment, I assist the team with my appropriate problem-solving skills, patience and sympathy efficiently."
+            'I have been working in a startup and an huge corporation, which is well-known in the traditional industry. In the fast-changing environment, I assist the team with my appropriate problem-solving skills, patience and sympathy efficiently.',
         },
-        { content: "Now, I am located in Taiwan." }
-      ]
-    };
-  }
-};
+        { content: 'Now, I am located in Taiwan.' },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped src="../styles/About.scss"></style>
