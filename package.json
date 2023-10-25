@@ -1,58 +1,39 @@
 {
-  "name": "cv_website",
-  "version": "1.1.0",
-  "private": true,
+  "name": "cv_resume-website",
+  "version": "2.0.0",
+  "private": false,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "pnpm eslint && pnpm prettier",
+    "prettier": "prettier --write .",
+    "eslint": "eslint \"./**/*.{ts,js,d.ts,vue}\" --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/vue-fontawesome": "^0.1.10",
+    "@popperjs/core": "^2.11.8",
     "aos": "^3.0.0-beta.6",
-    "bootstrap-vue": "^2.15.0",
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11",
+    "bootstrap": "^5.3.2",
+    "vue": "^2.7.10",
     "vue-carousel": "^0.18.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.4.0",
-    "@vue/cli-plugin-eslint": "^4.4.0",
-    "@vue/cli-plugin-router": "^4.4.0",
-    "@vue/cli-plugin-vuex": "^4.4.0",
-    "@vue/cli-service": "^4.4.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.19.1",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/prettier"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {
-      "eslint-disable-next-line": "off",
-      "no-console": "off"
-    }
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-vue": "^9.18.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.69.4",
+    "vite": "^4.5.0",
+    "vue-template-compiler": "^2.7.15"
   },
   "browserslist": [
     "> 1%",

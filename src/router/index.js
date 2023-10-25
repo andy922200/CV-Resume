@@ -1,19 +1,20 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import indexPage from "../views/IndexPage.vue";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import indexPage from '../views/IndexPage.vue'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/*",
-    name: "IndexPage",
-    component: indexPage
-  }
-];
+    path: '/*',
+    name: 'IndexPage',
+    component: indexPage,
+  },
+]
 
 const router = new VueRouter({
-  routes
-});
+  routes,
+  base: '/',
+})
 
-export default router;
+export default router

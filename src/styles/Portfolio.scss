@@ -1,15 +1,15 @@
-@import "variables";
-@import "mobile";
+@import 'variables';
+@import 'mobile';
 
-.portfolio{
-  .portfolio__title{
+.portfolio {
+  .portfolio__title {
     margin: 10px 0px 20px 0px;
     font-size: 32px;
-    @include mobile{
-      font-size:26px;
+    @include mobile {
+      font-size: 26px;
     }
   }
-  .carousel-custom{
+  .carousel-custom {
     margin-bottom: 16px;
   }
 }
@@ -26,83 +26,82 @@
     height: 300px;
     object-fit: cover;
     -o-object-fit: cover;
-    &:hover{
+    &:hover {
       transform: translateY(-10px);
       box-shadow: 0 0 6px #999;
-      transition: all .5s ease-out;
+      transition: all 0.5s ease-out;
     }
   }
   .card__body {
     padding: 15px 20px;
     font-weight: 600;
     text-align: center;
-    height:300px;
-    h3{
+    height: 300px;
+    h3 {
       font-size: 1.25rem;
       line-height: 1.5;
     }
-    .card__body__title-wrapper{
+    .card__body__title-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      height:60px;
+      height: 60px;
     }
-    .card__body__title{
-      color:#003831;
-      font-weight:bold;
-      @include mobile{
-        font-size:18px;
+    .card__body__title {
+      color: #003831;
+      font-weight: bold;
+      @include mobile {
+        font-size: 18px;
       }
     }
-    .card-text{
-      ul{
-        padding-left:16px;
+    .card-text {
+      ul {
+        padding-left: 16px;
         text-align: left;
         font-weight: normal;
       }
-      @include mobile{
-        font-size:16px;
+      @include mobile {
+        font-size: 16px;
       }
     }
-    .card__body__finishedTime{
-      display:inline-block;
+    .card__body__finishedTime {
+      display: inline-block;
       font-size: 1.25rem;
       color: #f44336;
       margin: 0px 10px 10px 0px;
-      &.card__body__finishedTime--blue{
-        color:blue;
+      &.card__body__finishedTime--blue {
+        color: blue;
       }
     }
-    .card-body__icon{
-      font-size: $default-font-size*1.25;
-      &.card-body__icon--check{
-        color:$light-green;
+    .card-body__icon {
+      font-size: $default-font-size * 1.25;
+      &.card-body__icon--check {
+        color: $light-green;
       }
-      &.card-body__icon--wrench{
-        color:$light-pink;
+      &.card-body__icon--wrench {
+        color: $light-pink;
       }
     }
   }
   .card-footer {
-    .card-footer__icon{
+    .card-footer__icon {
       position: relative;
-      top:15px;
-      left:0px;
-      font-size:$default-font-size*1.25;
+      top: 15px;
+      left: 0px;
+      font-size: $default-font-size * 1.25;
     }
-    .circle{
+    .circle {
       width: 50px;
-      height:50px;
-      background-color: #EFB21E;
-      border-radius:50%;
-      margin:0 auto;
-      a{
-        color:$black;
-        &:hover{
-          color:$white;
+      height: 50px;
+      background-color: #efb21e;
+      border-radius: 50%;
+      margin: 0 auto;
+      a {
+        color: $black;
+        &:hover {
+          color: $white;
         }
       }
     }
   }
 }
-

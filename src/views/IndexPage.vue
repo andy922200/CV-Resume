@@ -7,19 +7,12 @@
         <div class="row">
           <div class="col-12">
             <h2 class="title title--format">Hi, I am Andy.</h2>
-            <h3 class="subtitle title--format">
-              Software Developer, Blogger and Traveller
-            </h3>
+            <h3 class="subtitle title--format">Software Developer, Blogger and Traveller</h3>
             <h5 class="thirdLevelTitle title--format">
-              Independent, Sensitive and immersed in Natural & Programming
-              Languages
+              Independent, Sensitive and immersed in Natural & Programming Languages
             </h5>
             <div class="social_icons">
-              <div
-                class="social_icon"
-                v-for="(item, index) in socialIcons"
-                :key="index"
-              >
+              <div class="social_icon" v-for="(item, index) in socialIcons" :key="index">
                 <a target="_blank" :href="item.url">
                   <font-awesome-icon :icon="['fab', item.iconProp]" />
                 </a>
@@ -27,13 +20,8 @@
               </div>
             </div>
             <div class="resumeButtons d-flex justify-content-center">
-              <a
-                target="_blank"
-                href="https://www.cakeresume.com/andy0922ucs-engineer-en"
-              >
-                <button class="btn btn-outline--lightBlue m-2">
-                  Download CV
-                </button>
+              <a target="_blank" href="https://www.cakeresume.com/andy0922ucs-engineer-en">
+                <button class="btn btn-outline--lightBlue m-2">Download CV</button>
               </a>
             </div>
           </div>
@@ -50,21 +38,21 @@
         </div>
       </div>
     </div>
-    <Footer :social-icons="socialIcons" />
+    <FooterComponent :social-icons="socialIcons" />
   </div>
 </template>
 
 <script>
-import ScrollTop from "./../components/ScrollTop";
-import Navbar from "./../components/Navbar";
-import About from "./../components/About";
-import WhatIOffer from "./../components/WhatIOffer";
-import IntegrationTemplates from "./../components/IntegrationTemplates.vue";
-import Portfolio from "./../components/Portfolio";
-import Footer from "./../components/Footer";
+import ScrollTop from './../components/ScrollTop'
+import Navbar from './../components/Navbar'
+import About from './../components/About'
+import WhatIOffer from './../components/WhatIOffer'
+import IntegrationTemplates from './../components/IntegrationTemplates'
+import Portfolio from './../components/Portfolio'
+import FooterComponent from './../components/Footer'
 
 export default {
-  name: "IndexPage",
+  name: 'IndexPage',
   components: {
     ScrollTop,
     Navbar,
@@ -72,45 +60,45 @@ export default {
     WhatIOffer,
     IntegrationTemplates,
     Portfolio,
-    Footer
+    FooterComponent,
   },
   data() {
     return {
       socialIcons: [
         {
-          title: "Facebook",
-          iconProp: "facebook",
-          url: "https://www.facebook.com/andy0922ucs"
+          title: 'Facebook',
+          iconProp: 'facebook',
+          url: 'https://www.facebook.com/andy0922ucs',
         },
         {
-          title: "Instagram",
-          iconProp: "instagram",
-          url: "https://www.instagram.com/smlpoints/"
+          title: 'Instagram',
+          iconProp: 'instagram',
+          url: 'https://www.instagram.com/smlpoints/',
         },
         {
-          title: "My Blog",
-          iconProp: "wordpress-simple",
-          url: "https://smlpoints.com"
+          title: 'My Blog',
+          iconProp: 'wordpress-simple',
+          url: 'https://smlpoints.com',
         },
         {
-          title: "LinkEdin",
-          iconProp: "linkedin-in",
-          url: "https://www.linkedin.com/in/andy922200"
+          title: 'LinkEdin',
+          iconProp: 'linkedin-in',
+          url: 'https://www.linkedin.com/in/andy922200',
         },
         {
-          title: "Github",
-          iconProp: "github",
-          url: "https://github.com/andy922200"
+          title: 'Github',
+          iconProp: 'github',
+          url: 'https://github.com/andy922200',
         },
         {
-          title: "Twitter",
-          iconProp: "twitter",
-          url: "https://twitter.com/SMLPOINTS"
-        }
-      ]
-    };
-  }
-};
+          title: 'Twitter',
+          iconProp: 'twitter',
+          url: 'https://twitter.com/SMLPOINTS',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped src="../styles/IndexPage.scss"></style>
