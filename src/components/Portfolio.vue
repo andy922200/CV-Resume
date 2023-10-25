@@ -72,8 +72,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState } from 'pinia'
+import appStore from '@/store'
 import { images } from '../assets'
+import { Carousel, Slide } from '@jambonn/vue-concise-carousel'
+import '@jambonn/vue-concise-carousel/lib/vue-concise-carousel.css'
 
 export default {
   name: 'Portfolio',
@@ -210,8 +213,9 @@ export default {
       ],
     }
   },
+  components: { Carousel, Slide },
   computed: {
-    ...mapGetters(['windowWidth']),
+    ...mapState(appStore, ['windowWidth']),
   },
 }
 </script>

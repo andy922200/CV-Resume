@@ -15,7 +15,7 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.showButton)
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener('scroll', this.showButton)
   },
   methods: {
@@ -49,6 +49,8 @@ export default {
   align-items: center;
   background-color: #27ae60;
   border-radius: 50%;
+  cursor: pointer;
+  color: white;
   @media (max-width: 576px) {
     right: 20px;
   }

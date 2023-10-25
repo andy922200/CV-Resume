@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <FooterComponent :social-icons="socialIcons" />
+    <FooterArea :social-icons="socialIcons" />
   </div>
 </template>
 
@@ -49,7 +49,7 @@ import About from './../components/About'
 import WhatIOffer from './../components/WhatIOffer'
 import IntegrationTemplates from './../components/IntegrationTemplates'
 import Portfolio from './../components/Portfolio'
-import FooterComponent from './../components/Footer'
+import FooterArea from './../components/FooterArea'
 
 export default {
   name: 'IndexPage',
@@ -60,7 +60,7 @@ export default {
     WhatIOffer,
     IntegrationTemplates,
     Portfolio,
-    FooterComponent,
+    FooterArea,
   },
   data() {
     return {

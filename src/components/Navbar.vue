@@ -3,7 +3,6 @@
     <nav class="navbar navbar-dark">
       <div class="navbar__wrapper d-flex">
         <a href="#" class="showMenu showMenu__icon" @click="triggerOpenMenu">
-          <!-- <b-icon icon="list"></b-icon> -->
           <font-awesome-icon
             :icon="['fas', 'bars']"
             class="card-body__icon card-body__icon--wrench"
@@ -29,7 +28,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState } from 'pinia'
+import appStore from '@/store'
 
 export default {
   name: 'Navbar',
@@ -48,11 +48,11 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.resetClickedStatus)
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener('scroll', this.resetClickedStatus)
   },
   computed: {
-    ...mapGetters(['windowWidth', 'windowHeight']),
+    ...mapState(appStore, ['windowWidth', 'windowHeight']),
   },
   methods: {
     changeCurrentNavItem(item) {

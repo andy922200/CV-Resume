@@ -7,7 +7,10 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { mapActions } from 'pinia'
+import appStore from '@/store'
 
 export default {
   name: 'App',
@@ -15,11 +18,14 @@ export default {
     this.initialize()
     window.addEventListener('resize', this.detectWindowWidth)
   },
-  destroyed() {
+  mounted() {
+    AOS.init()
+  },
+  unmounted() {
     window.removeEventListener('resize', this.detectWindowWidth)
   },
   methods: {
-    ...mapMutations(['setWindowWidth', 'setWindowHeight']),
+    ...mapActions(appStore, ['setWindowWidth', 'setWindowHeight']),
     initialize() {
       this.detectWindowWidth()
     },

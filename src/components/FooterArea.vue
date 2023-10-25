@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p class="footer__content">&copy; 2022 SMLPoints.com || All Rights Reserved.</p>
+    <p class="footer__content">&copy; 2023 SMLPoints.com || All Rights Reserved.</p>
     <ul class="footer__socialIcons">
       <li>
         <a target="_blank" v-for="(item, index) in socialIcons" :key="index" :href="item.url">
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'FooterComponent',
+  name: 'FooterArea',
   props: {
     socialIcons: {
       default: Array,

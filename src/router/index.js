@@ -1,20 +1,22 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import indexPage from '../views/IndexPage.vue'
-
-Vue.use(VueRouter)
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Index from '../views/Index.vue'
 
 const routes = [
   {
-    path: '/*',
-    name: 'IndexPage',
-    component: indexPage,
+    path: '/',
+    name: 'Index',
+    component: Index,
+  },
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/',
   },
 ]
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes,
-  base: '/',
+  scrollBehavior: () => ({ left: 0, top: 0 }),
 })
 
 export default router

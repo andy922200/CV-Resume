@@ -1,25 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { defineStore } from 'pinia'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  state: {
+export default defineStore({
+  id: 'app',
+  state: () => ({
     windowWidth: 0,
     windowHeight: 0,
-  },
-  getters: {
-    windowWidth: (state) => state.windowWidth,
-    windowHeight: (state) => state.windowHeight,
-  },
-  mutations: {
-    setWindowWidth(state, value) {
-      state.windowWidth = value
+  }),
+  actions: {
+    setWindowWidth(value) {
+      this.windowWidth = value
     },
-    setWindowHeight(state, value) {
-      state.windowHeight = value
+    setWindowHeight(value) {
+      this.windowHeight = value
     },
   },
-  actions: {},
-  modules: {},
 })
