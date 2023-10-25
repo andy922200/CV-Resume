@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build
+pnpm build
 
 # navigate into the build output directory
 cd dist
@@ -12,8 +12,9 @@ cd dist
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 git init
+git checkout -b gh-pages
 git add -A
-git commit -m 'deploy'
+git commit -m 'Deploy New Version'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
