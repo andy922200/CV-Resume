@@ -1,17 +1,7 @@
-import { defineStore } from 'pinia'
+import useAppStore from './app'
 
-export default defineStore({
-  id: 'app',
-  state: () => ({
-    windowWidth: 0,
-    windowHeight: 0,
-  }),
-  actions: {
-    setWindowWidth(value) {
-      this.windowWidth = value
-    },
-    setWindowHeight(value) {
-      this.windowHeight = value
-    },
-  },
+const useStore = () => ({
+  app: useAppStore(),
 })
+
+export default useStore

@@ -1,38 +1,33 @@
 <template>
-  <div class="arrowUpIconWrapper" v-if="isButtonShown" @click="triggerBackToTop">
+  <div v-if="isButtonShown" class="arrowUpIconWrapper" @click="triggerBackToTop">
     <font-awesome-icon :icon="['fas', 'arrow-up']" class="arrowUpIcon" />
   </div>
 </template>
 
-<script>
-export default {
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+defineOptions({
   name: 'ScrollTop',
-  data() {
-    return {
-      isButtonShown: false,
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.showButton)
-  },
-  unmounted() {
-    window.removeEventListener('scroll', this.showButton)
-  },
-  methods: {
-    showButton() {
-      let scrollTop = document.documentElement.scrollTop
-      let currentView = this
-      currentView.scrollTop = scrollTop
-      if (currentView.scrollTop > 40) {
-        this.isButtonShown = true
-      } else {
-        this.isButtonShown = false
-      }
-    },
-    triggerBackToTop() {
-      window.scrollTo(0, 0)
-    },
-  },
+})
+
+const isButtonShown = ref(false)
+
+onMounted(() => {
+  window.addEventListener('scroll', showButton)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', showButton)
+})
+
+const showButton = () => {
+  let scrollTop = document.documentElement.scrollTop
+  isButtonShown.value = scrollTop > 40
+}
+
+const triggerBackToTop = () => {
+  window.scrollTo(0, 0)
 }
 </script>
 

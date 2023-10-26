@@ -6,35 +6,33 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted, onUnmounted } from 'vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { mapActions } from 'pinia'
-import appStore from '@/store'
+import useStore from '@/store'
 
-export default {
+defineOptions({
   name: 'App',
-  created() {
-    this.initialize()
-    window.addEventListener('resize', this.detectWindowWidth)
-  },
-  mounted() {
-    AOS.init()
-  },
-  unmounted() {
-    window.removeEventListener('resize', this.detectWindowWidth)
-  },
-  methods: {
-    ...mapActions(appStore, ['setWindowWidth', 'setWindowHeight']),
-    initialize() {
-      this.detectWindowWidth()
-    },
-    detectWindowWidth() {
-      this.setWindowWidth(window.innerWidth)
-      this.setWindowHeight(window.innerHeight)
-    },
-  },
+})
+
+const { app } = useStore()
+
+const detectWindowWidth = () => {
+  app.setWindowWidth(window.innerWidth)
+  app.setWindowHeight(window.innerHeight)
 }
+
+onMounted(() => {
+  AOS.init()
+  window.addEventListener('resize', detectWindowWidth)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', detectWindowWidth)
+})
+
+detectWindowWidth()
 </script>
 
 <style lang="scss" scoped src="./styles/app.scss"></style>

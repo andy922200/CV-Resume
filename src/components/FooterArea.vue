@@ -3,7 +3,7 @@
     <p class="footer__content">&copy; 2023 SMLPoints.com || All Rights Reserved.</p>
     <ul class="footer__socialIcons">
       <li>
-        <a target="_blank" v-for="(item, index) in socialIcons" :key="index" :href="item.url">
+        <a v-for="(item, index) in socialIcons" :key="index" target="_blank" :href="item.url">
           <font-awesome-icon :icon="['fab', item.iconProp]" />
         </a>
       </li>
@@ -11,15 +11,17 @@
   </footer>
 </template>
 
-<script>
-export default {
+<script setup>
+defineOptions({
   name: 'FooterArea',
-  props: {
-    socialIcons: {
-      default: Array,
-    },
+})
+
+defineProps({
+  socialIcons: {
+    type: Array,
+    default: () => [],
   },
-}
+})
 </script>
 
 <style lang="scss" scoped src="../styles/Footer.scss"></style>

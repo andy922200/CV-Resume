@@ -9,8 +9,8 @@
           />
         </a>
         <ul
-          class="menu"
           v-if="openMobileNavItems || windowWidth > 576"
+          class="menu"
           :class="windowWidth <= 576 ? 'mobile-active' : ''"
         >
           <li v-for="item in navItems" :key="item.prop">
@@ -27,59 +27,59 @@
   </header>
 </template>
 
-<script>
-import { mapState } from 'pinia'
-import appStore from '@/store'
+<script setup>
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
+import useStore from '@/store'
 
-export default {
+const { app } = useStore()
+
+defineOptions({
   name: 'Navbar',
-  data() {
-    return {
-      navItems: [
-        { title: 'Home', prop: 'home', isClicked: false },
-        { title: 'About', prop: 'about', isClicked: false },
-        { title: 'What I Offer?', prop: 'service', isClicked: false },
-        { title: 'Portfolio', prop: 'portfolio', isClicked: false },
-      ],
-      currentNavItem: '',
-      openMobileNavItems: false,
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.resetClickedStatus)
-  },
-  unmounted() {
-    window.removeEventListener('scroll', this.resetClickedStatus)
-  },
-  computed: {
-    ...mapState(appStore, ['windowWidth', 'windowHeight']),
-  },
-  methods: {
-    changeCurrentNavItem(item) {
-      this.currentNavItem = item
-    },
-    triggerOpenMenu() {
-      if (this.openMobileNavItems) {
-        this.openMobileNavItems = false
-        this.currentNavItem = ''
-      } else {
-        this.openMobileNavItems = true
-      }
-    },
-    resetClickedStatus() {
-      if (window.scrollY === 0) {
-        this.currentNavItem = ''
-      }
-    },
-  },
-  watch: {
-    currentNavItem() {
-      this.navItems.forEach((d) => {
-        d.prop.includes(this.currentNavItem) ? (d.isClicked = true) : (d.isClicked = false)
-      })
-    },
-  },
+})
+
+const navItems = ref([
+  { title: 'Home', prop: 'home', isClicked: false },
+  { title: 'About', prop: 'about', isClicked: false },
+  { title: 'What I Offer?', prop: 'service', isClicked: false },
+  { title: 'Portfolio', prop: 'portfolio', isClicked: false },
+])
+
+const windowWidth = computed(() => app.windowWidth)
+const currentNavItem = ref('')
+let openMobileNavItems = ref(false)
+
+onMounted(() => {
+  window.addEventListener('scroll', resetClickedStatus)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', resetClickedStatus)
+})
+
+const changeCurrentNavItem = (item) => {
+  currentNavItem.value = item
 }
+
+const triggerOpenMenu = () => {
+  if (openMobileNavItems.value) {
+    openMobileNavItems.value = false
+    currentNavItem.value = ''
+  } else {
+    openMobileNavItems.value = true
+  }
+}
+
+const resetClickedStatus = () => {
+  if (window.scrollY === 0) {
+    currentNavItem.value = ''
+  }
+}
+
+watch(currentNavItem, () => {
+  navItems.value.forEach((d) => {
+    d.prop.includes(currentNavItem.value) ? (d.isClicked = true) : (d.isClicked = false)
+  })
+})
 </script>
 
 <style lang="scss" scoped src="../styles/Navbar.scss"></style>
