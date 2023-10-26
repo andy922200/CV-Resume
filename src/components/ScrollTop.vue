@@ -1,6 +1,10 @@
 <template>
-  <div v-if="isButtonShown" class="arrowUpIconWrapper" @click="triggerBackToTop">
-    <font-awesome-icon :icon="['fas', 'arrow-up']" class="arrowUpIcon" />
+  <div
+    v-if="isButtonShown"
+    class="position-fixed w-[50px] h-[50px] bottom-[50px] right-[20px] sm:right-[40px] z-2 flex justify-center items-center bg-[#27ae60] border-rd-50% cursor-pointer text-white"
+    @click="triggerBackToTop"
+  >
+    <font-awesome-icon :icon="['fas', 'arrow-up']" class="text-size-5" />
   </div>
 </template>
 
@@ -30,27 +34,3 @@ const triggerBackToTop = () => {
   window.scrollTo(0, 0)
 }
 </script>
-
-<style lang="scss" scoped>
-.arrowUpIconWrapper {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  bottom: 50px;
-  right: 40px;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #27ae60;
-  border-radius: 50%;
-  cursor: pointer;
-  color: white;
-  @media (max-width: 576px) {
-    right: 20px;
-  }
-  .arrowUpIcon {
-    font-size: 20px;
-  }
-}
-</style>

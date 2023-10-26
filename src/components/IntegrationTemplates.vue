@@ -1,22 +1,20 @@
 <template>
-  <div class="integrationTemplates">
-    <div class="row">
-      <h3 class="integrationTemplates__title">IntegrationTemplates</h3>
-      <div v-for="item in templates" :key="item.name" class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            {{ item.header }}
+  <div class="row">
+    <h3 class="mx-0 my-5 text-size-[1.625rem] sm:text-size-[2rem] w-full">IntegrationTemplates</h3>
+    <div v-for="item in templates" :key="item.name" class="col-md-6">
+      <div class="card md:mt-2">
+        <div class="card-header">
+          {{ item.header }}
+        </div>
+        <div class="card-body">
+          <div class="h-[60px]">
+            <p class="card-text">
+              {{ item.description }}
+            </p>
           </div>
-          <div class="card-body">
-            <div class="card-text-wrapper">
-              <p class="card-text">
-                {{ item.description }}
-              </p>
-            </div>
-            <a :href="item.link" target="_blank" class="btn btn-secondary">
-              <font-awesome-icon :icon="['fab', 'github']" class="card-footer__icon" />
-            </a>
-          </div>
+          <a :href="item.link" target="_blank" class="btn btn-secondary">
+            <font-awesome-icon :icon="['fab', 'github']" class="card-footer__icon" />
+          </a>
         </div>
       </div>
     </div>
@@ -61,5 +59,3 @@ const templates = [
   },
 ]
 </script>
-
-<style lang="scss" scoped src="../styles/IntegrationTemplates.scss"></style>

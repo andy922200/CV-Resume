@@ -1,22 +1,26 @@
 <template>
-  <div id="about" class="about">
-    <div class="row">
-      <div class="col-12">
-        <h3 class="about__title">About Me</h3>
-        <div class="avatar">
-          <img src="https://i.imgur.com/YB7BrfL.jpg" alt="avatar" />
-        </div>
-        <div class="description">
-          <p
-            v-for="(item, index) in descriptions"
-            :key="index"
-            :data-aos="'fade-top'"
-            :data-aos-once="true"
-            :data-aos-duration="1000"
-          >
-            {{ item.content }}
-          </p>
-        </div>
+  <div id="about" class="row">
+    <div class="col-12">
+      <h3 class="mx-0 my-1.25rem text-size-[1.625rem] sm:text-size-[2rem]">About Me</h3>
+      <div class="mx-auto my-0 max-w-[120px] max-h-[200px] sm:max-w-[190px] sm:max-h-[250px]">
+        <img
+          class="w-auto h-auto max-w-[100%] max-h-[100%]"
+          src="https://i.imgur.com/YB7BrfL.jpg"
+          alt="avatar"
+        />
+      </div>
+      <div
+        class="mx-0 my-1.25rem text-left text-size-[1rem] line-height-6 sm:text-size-[1.25rem] sm:line-height-8"
+      >
+        <p
+          v-for="(item, index) in descriptions"
+          :key="index"
+          :data-aos="'fade-top'"
+          :data-aos-once="true"
+          :data-aos-duration="1000"
+        >
+          {{ item.content }}
+        </p>
       </div>
     </div>
   </div>
@@ -41,5 +45,3 @@ const descriptions = [
   },
 ]
 </script>
-
-<style lang="scss" scoped src="../styles/About.scss"></style>

@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="app-default-class">
-    <div class="container-fluid container-fluid--noPadding">
+  <div id="app" class="app-default-class text-center text-black">
+    <div class="container-fluid p-0">
       <router-view />
     </div>
   </div>
@@ -35,4 +35,13 @@ onUnmounted(() => {
 detectWindowWidth()
 </script>
 
-<style lang="scss" scoped src="./styles/app.scss"></style>
+<style lang="scss">
+$font-family-for-all-platforms: Arial, '文泉驛正黑', 'WenQuanYi Zen Hei', '儷黑 Pro', 'LiHei Pro',
+  '微軟正黑體', 'Microsoft JhengHei', '標楷體', DFKai-SB, sans-serif;
+
+.app-default-class {
+  font-family: $font-family-for-all-platforms;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>

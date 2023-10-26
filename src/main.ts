@@ -13,6 +13,9 @@ library.add(icons)
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+// Add UnoCSS
+import 'virtual:uno.css'
+
 const app = createApp(App)
 
 app.use(createPinia()).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')

@@ -1,34 +1,50 @@
 <template>
-  <div class="indexPage">
+  <div class="index">
     <ScrollTop />
-    <div class="indexPage__landingArea">
+    <div class="landing-area pt-40 pb-32 text-white sm:py-56">
       <Navbar />
-      <div class="container">
+      <div class="container px-18px md:px-24px lg:px-16px xl:px-30px xxl:px-40px">
         <div class="row">
           <div class="col-12">
-            <h2 class="title title--format">Hi, I am Andy.</h2>
-            <h3 class="subtitle title--format">Software Developer, Blogger and Traveler</h3>
-            <h5 class="thirdLevelTitle title--format">
+            <h2 class="text-size-[1.75rem] sm:text-size-[2.25rem]">Hi, I am Andy.</h2>
+            <h3 class="text-size-[1.25rem] sm:text-size-[1.5rem]">
+              Software Developer, Blogger and Traveler
+            </h3>
+            <h5 class="text-size-[1rem] sm:text-size-[1.25rem]">
               Independent, Sensitive and immersed in Natural & Programming Languages
             </h5>
-            <div class="social_icons">
-              <div v-for="(item, index) in socialIcons" :key="index" class="social_icon">
-                <a target="_blank" :href="item.url">
+            <div class="mx-0 my-0.625rem flex flex-nowrap justify-center">
+              <div
+                v-for="(item, index) in socialIcons"
+                :key="index"
+                class="social_icon w-50px pr-0.5rem sm:w-75px pr-0.75rem"
+              >
+                <a
+                  target="_blank"
+                  :href="item.url"
+                  class="text-size-[1.75rem] sm:text-size-[2.25rem] text-white"
+                >
                   <font-awesome-icon :icon="['fab', item.iconProp]" />
                 </a>
-                <p class="icon__title">{{ item.title }}</p>
+                <p class="icon__title mb-0">
+                  {{ item.title }}
+                </p>
               </div>
             </div>
-            <div class="resumeButtons d-flex justify-content-center">
+            <div class="flex justify-center">
               <a target="_blank" href="https://www.cakeresume.com/andy0922ucs-engineer-en">
-                <button class="btn btn-outline--lightBlue m-2">Download CV</button>
+                <button
+                  class="btn color-lightBlue border-lightBlue @hover:color-white @hover:bg-lightBlue @hover-border-lightBlue m-2"
+                >
+                  Download CV
+                </button>
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container px-18px md:px-24px lg:px-16px xl:px-30px xxl:px-40px">
       <div class="row">
         <div class="col-12">
           <About />
@@ -89,4 +105,23 @@ const socialIcons = [
 ]
 </script>
 
-<style lang="scss" scoped src="../styles/IndexPage.scss"></style>
+<style lang="scss" scoped>
+.landing-area {
+  background-image: url(../assets/dark_layout.png), url(../assets/topImage.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .social_icon {
+    .icon__title {
+      visibility: hidden;
+    }
+
+    &:hover {
+      .icon__title {
+        visibility: visible;
+      }
+    }
+  }
+}
+</style>

@@ -2,7 +2,7 @@
   <div id="portfolio" class="portfolio">
     <div class="row">
       <div class="col-12">
-        <h3 class="portfolio__title">Portfolio</h3>
+        <h3 class="mx-0 my-4 text-size-[1.625rem] sm:text-size-8">Portfolio</h3>
         <Carousel
           :per-page="1"
           :per-page-custom="[
@@ -12,35 +12,45 @@
           ]"
           :mouse-drag="true"
           :navigation-enabled="windowWidth >= 576 ? true : false"
-          class="carousel-custom"
+          class="m-4"
         >
           <Slide v-for="(project, index) in projects" :key="index">
-            <div class="card">
-              <img :src="`${project.thumb_img}`" :alt="`port-folio-${index}`" class="card__img" />
+            <div class="card w-full mt-0 mr-[0.625rem] mb-[0.625rem] ml-0 bg-white overflow-hidden">
+              <img
+                :src="`${project.thumb_img}`"
+                :alt="`port-folio-${index}`"
+                class="portfolio-img block w-full h-[300px] object-cover"
+              />
 
-              <div class="card__body">
-                <div class="card__body__title-wrapper">
-                  <h3 class="card__body__title">{{ project.title }}</h3>
+              <div class="card__body h-[300px] px-5 py-4">
+                <div class="flex justify-center items-center h-[60px]">
+                  <h3 class="text-size-[1.125rem] font-bold color-#003831 sm:text-size-5">
+                    {{ project.title }}
+                  </h3>
                 </div>
                 <span
-                  class="card__body__finishedTime"
-                  :class="project.isFinished ? 'card__body__finishedTime--blue' : ''"
+                  class="font-bold inline-block text-size-5 mt-0 mr-[0.625rem] mb-[0.625rem] ml-0 color-#f44336"
+                  :class="project.isFinished ? 'color-blue' : ''"
                   >{{ project.finished_time }}</span
                 >
                 <span>
                   <font-awesome-icon
                     v-if="project.isFinished"
                     :icon="['fas', 'check']"
-                    class="card-body__icon card-body__icon--check"
+                    class="text-size-5 color-lightGreen"
                   />
                   <font-awesome-icon
                     v-else
                     :icon="['fas', 'wrench']"
-                    class="card-body__icon card-body__icon--wrench"
+                    class="text-size-5 color-lightPink"
                   />
                 </span>
-                <div class="card-text">
-                  <ul v-for="(item, subIndex) in project.listItems" :key="subIndex">
+                <div>
+                  <ul
+                    v-for="(item, subIndex) in project.listItems"
+                    :key="subIndex"
+                    class="pl-4 text-left font-500 text-size-4"
+                  >
                     <li>{{ item }}</li>
                   </ul>
                 </div>
@@ -48,17 +58,14 @@
 
               <div class="card-footer">
                 <div class="row">
-                  <div class="circle">
+                  <div class="icon-circle-wrapper">
                     <a target="_blank" :href="project.web_url">
-                      <font-awesome-icon
-                        :icon="['fas', 'external-link-alt']"
-                        class="card-footer__icon"
-                      />
+                      <font-awesome-icon :icon="['fas', 'external-link-alt']" class="icon" />
                     </a>
                   </div>
-                  <div v-if="project.github_url" class="circle">
+                  <div v-if="project.github_url" class="icon-circle-wrapper">
                     <a target="_blank" :href="project.github_url">
-                      <font-awesome-icon :icon="['fab', 'github']" class="card-footer__icon" />
+                      <font-awesome-icon :icon="['fab', 'github']" class="icon" />
                     </a>
                   </div>
                 </div>
@@ -215,4 +222,33 @@ const projects = [
 ]
 </script>
 
-<style lang="scss" scoped src="../styles/Portfolio.scss"></style>
+<style lang="scss" scoped>
+.portfolio-img {
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 6px #999;
+    transition: all 0.5s ease-out;
+  }
+}
+
+.icon {
+  position: relative;
+  top: 15px;
+  left: 0px;
+  font-size: 1.25rem;
+}
+
+.icon-circle-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: #efb21e;
+  border-radius: 50%;
+  margin: 0 auto;
+  a {
+    color: #444444;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+</style>
