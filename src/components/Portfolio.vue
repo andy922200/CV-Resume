@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <h3 class="portfolio__title">Portfolio</h3>
-        <carousel
+        <Carousel
           :per-page="1"
           :per-page-custom="[
             [576, 1],
@@ -14,7 +14,7 @@
           :navigation-enabled="windowWidth >= 576 ? true : false"
           class="carousel-custom"
         >
-          <slide v-for="(project, index) in projects" :key="index">
+          <Slide v-for="(project, index) in projects" :key="index">
             <div class="card">
               <img :src="`${project.thumb_img}`" :alt="`port-folio-${index}`" class="card__img" />
 
@@ -64,14 +64,14 @@
                 </div>
               </div>
             </div>
-          </slide>
-        </carousel>
+          </Slide>
+        </Carousel>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 import useStore from '@/store'
 import { images } from '../assets'

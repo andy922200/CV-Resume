@@ -9,11 +9,17 @@ module.exports = {
   extends: [
     'eslint-config-prettier',
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
     'plugin:vue/vue3-essential',
     'plugin:prettier/recommended',
   ],
-  plugins: ['vue'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+  },
+  plugins: ['vue', '@typescript-eslint'],
   rules: {
     'eslint-disable-next-line': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,

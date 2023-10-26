@@ -7,10 +7,10 @@ const useAppStore = defineStore({
     windowHeight: 0,
   }),
   actions: {
-    setWindowWidth(value) {
+    setWindowWidth(value: number) {
       this.windowWidth = value
     },
-    setWindowHeight(value) {
+    setWindowHeight(value: number) {
       this.windowHeight = value
     },
   },

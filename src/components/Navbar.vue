@@ -27,7 +27,7 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 import useStore from '@/store'
 
@@ -56,7 +56,7 @@ onUnmounted(() => {
   window.removeEventListener('scroll', resetClickedStatus)
 })
 
-const changeCurrentNavItem = (item) => {
+const changeCurrentNavItem = (item: string) => {
   currentNavItem.value = item
 }
 

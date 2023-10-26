@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "lint": "pnpm eslint && pnpm prettier",
     "prettier": "prettier --write .",
@@ -24,6 +24,11 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.6",
+    "@types/bootstrap": "^5.2.8",
+    "@types/node": "^20.8.9",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
     "@vitejs/plugin-vue": "^4.4.0",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
@@ -31,6 +36,8 @@
     "eslint-plugin-vue": "^9.18.0",
     "prettier": "^3.0.3",
     "sass": "^1.69.4",
-    "vite": "^4.5.0"
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vue-tsc": "^1.8.21"
   }
 }

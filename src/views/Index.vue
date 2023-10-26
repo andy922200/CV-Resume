@@ -42,14 +42,14 @@
   </div>
 </template>
 
-<script setup>
-import ScrollTop from './../components/ScrollTop'
-import Navbar from './../components/Navbar'
-import About from './../components/About'
-import WhatIOffer from './../components/WhatIOffer'
-import IntegrationTemplates from './../components/IntegrationTemplates'
-import Portfolio from './../components/Portfolio'
-import FooterArea from './../components/FooterArea'
+<script setup lang="ts">
+import ScrollTop from './../components/ScrollTop.vue'
+import Navbar from './../components/Navbar.vue'
+import About from './../components/About.vue'
+import WhatIOffer from './../components/WhatIOffer.vue'
+import IntegrationTemplates from './../components/IntegrationTemplates.vue'
+import Portfolio from './../components/Portfolio.vue'
+import FooterArea from './../components/FooterArea.vue'
 
 defineOptions({
   name: 'Index',
