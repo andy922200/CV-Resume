@@ -5,6 +5,7 @@ import {
   faGithub,
   faWordpressSimple,
   faLinkedinIn,
+  faNpm,
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faInbox,
@@ -26,6 +27,7 @@ export const icons = {
   faFacebook,
   faInstagram,
   faGithub,
+  faNpm,
   faWordpressSimple,
   faLinkedinIn,
   faInbox,

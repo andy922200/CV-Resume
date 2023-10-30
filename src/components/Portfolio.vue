@@ -14,7 +14,7 @@
           :navigation-enabled="windowWidth >= 576 ? true : false"
           class="m-4"
         >
-          <Slide v-for="(project, index) in projects" :key="index">
+          <Slide v-for="(project, index) in displayProjects" :key="index">
             <div class="card w-full mt-0 mr-[0.625rem] mb-[0.625rem] ml-0 bg-white overflow-hidden">
               <img
                 :src="`${project.thumb_img}`"
@@ -89,9 +89,20 @@ defineOptions({
   name: 'Portfolio',
 })
 
+interface Project {
+  title: string
+  listItems: string[]
+  finished_time: string
+  isFinished: boolean
+  thumb_img: string
+  web_url: string
+  github_url: string | null
+  hide?: boolean
+}
+
 const { app } = useStore()
 const windowWidth = computed(() => app.windowWidth)
-const projects = [
+const projects: Project[] = [
   {
     title: 'Taiwan Motel Search',
     listItems: ['Vue 3', 'TypeScript', 'OpenLayers', 'Prime Vue'],
@@ -123,7 +134,7 @@ const projects = [
     title: 'Front-End Dev Skills',
     listItems: ['Layout', 'Template', 'Mockup'],
     finished_time: '2020-08-31',
-    isFinished: false,
+    isFinished: true,
     thumb_img: images.websiteMockup,
     web_url: 'https://andy922200.github.io/website-template-mockup/',
     github_url: 'https://github.com/andy922200/website-template-mockup',
@@ -136,6 +147,7 @@ const projects = [
     thumb_img: images.cocktailsCollections,
     web_url: 'https://cocktails-collections-sml.herokuapp.com/#/',
     github_url: 'https://github.com/andy922200/Cocktails-Collections',
+    hide: true,
   },
   {
     title: 'Experience Editor',
@@ -145,6 +157,7 @@ const projects = [
     thumb_img: images.personalExperienceEditor,
     web_url: 'https://personal-experience-editor.herokuapp.com/',
     github_url: 'https://github.com/andy922200/personal-experience-editor',
+    hide: true,
   },
   {
     title: 'TW Visa Requirement',
@@ -154,6 +167,7 @@ const projects = [
     thumb_img: images.twVisaPassport,
     web_url: 'https://visa-requirement-tw.herokuapp.com/#/',
     github_url: 'https://github.com/andy922200/visa-requirements-for-tw-citizens',
+    hide: true,
   },
   {
     title: 'Real-time Chatroom',
@@ -172,6 +186,7 @@ const projects = [
     thumb_img: images.movieTrailerSearch,
     web_url: 'https://tmdb-movie-database.herokuapp.com/#/',
     github_url: 'https://github.com/andy922200/Movie-Database-from-TMDB',
+    hide: true,
   },
   {
     title: 'Rank Search',
@@ -218,8 +233,10 @@ const projects = [
     thumb_img: images.industry4gen,
     web_url: 'https://tinyurl.com/y6kyxfn8',
     github_url: null,
+    hide: true,
   },
 ]
+const displayProjects = computed(() => projects.filter((project) => !project.hide))
 </script>
 
 <style lang="scss" scoped>

@@ -49,6 +49,7 @@
         <div class="col-12">
           <About />
           <WhatIOffer />
+          <Package />
           <IntegrationTemplates />
           <Portfolio />
         </div>
@@ -64,6 +65,7 @@ import Navbar from './../components/Navbar.vue'
 import About from './../components/About.vue'
 import WhatIOffer from './../components/WhatIOffer.vue'
 import IntegrationTemplates from './../components/IntegrationTemplates.vue'
+import Package from '@/components/Package.vue'
 import Portfolio from './../components/Portfolio.vue'
 import FooterArea from './../components/FooterArea.vue'
 
