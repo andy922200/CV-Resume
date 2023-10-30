@@ -20,4 +20,6 @@ git commit -m 'Deploy New Version'
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 git push -f https://github.com/andy922200/CV-Resume.git gh-pages
 
-cd -
+# remove dist folder
+cd ..
+rm -rf dist
