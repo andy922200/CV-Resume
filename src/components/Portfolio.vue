@@ -1,89 +1,12 @@
-<template>
-  <div id="portfolio" class="portfolio">
-    <div class="row">
-      <div class="col-12">
-        <h3 class="mx-0 my-4 text-size-[1.625rem] sm:text-size-8">Portfolio</h3>
-        <Carousel
-          :per-page="1"
-          :per-page-custom="[
-            [576, 1],
-            [768, 2],
-            [1024, 4],
-          ]"
-          :mouse-drag="true"
-          :navigation-enabled="windowWidth >= 576 ? true : false"
-          class="m-4"
-        >
-          <Slide v-for="(project, index) in displayProjects" :key="index">
-            <div class="card w-full mt-0 mr-[0.625rem] mb-[0.625rem] ml-0 bg-white overflow-hidden">
-              <img
-                :src="`${project.thumb_img}`"
-                :alt="`port-folio-${index}`"
-                class="portfolio-img block w-full h-[300px] object-cover"
-              />
-
-              <div class="card__body h-[300px] px-5 py-4">
-                <div class="flex justify-center items-center h-[60px]">
-                  <h3 class="text-size-[1.125rem] font-bold color-#003831 sm:text-size-5">
-                    {{ project.title }}
-                  </h3>
-                </div>
-                <span
-                  class="font-bold inline-block text-size-5 mt-0 mr-[0.625rem] mb-[0.625rem] ml-0 color-#f44336"
-                  :class="project.isFinished ? 'color-blue' : ''"
-                  >{{ project.finished_time }}</span
-                >
-                <span>
-                  <font-awesome-icon
-                    v-if="project.isFinished"
-                    :icon="['fas', 'check']"
-                    class="text-size-5 color-lightGreen"
-                  />
-                  <font-awesome-icon
-                    v-else
-                    :icon="['fas', 'wrench']"
-                    class="text-size-5 color-lightPink"
-                  />
-                </span>
-                <div>
-                  <ul
-                    v-for="(item, subIndex) in project.listItems"
-                    :key="subIndex"
-                    class="pl-4 text-left font-500 text-size-4"
-                  >
-                    <li>{{ item }}</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <div class="row">
-                  <div class="icon-circle-wrapper">
-                    <a target="_blank" :href="project.web_url">
-                      <font-awesome-icon :icon="['fas', 'external-link-alt']" class="icon" />
-                    </a>
-                  </div>
-                  <div v-if="project.github_url" class="icon-circle-wrapper">
-                    <a target="_blank" :href="project.github_url">
-                      <font-awesome-icon :icon="['fab', 'github']" class="icon" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Slide>
-        </Carousel>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { computed } from 'vue'
-import useStore from '@/store'
-import { images } from '../assets'
-import { Carousel, Slide } from '@jambonn/vue-concise-carousel'
 import '@jambonn/vue-concise-carousel/lib/vue-concise-carousel.css'
+
+import { Carousel, Slide } from '@jambonn/vue-concise-carousel'
+import { computed } from 'vue'
+
+import useStore from '@/store'
+
+import { images } from '../assets'
 
 defineOptions({
   name: 'Portfolio',
@@ -247,6 +170,86 @@ const projects: Project[] = [
 ]
 const displayProjects = computed(() => projects.filter((project) => !project.hide))
 </script>
+
+<template>
+  <div id="portfolio" class="portfolio">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-size-[1.625rem] sm:text-size-8 mx-0 my-4">Portfolio</h3>
+        <Carousel
+          :per-page="1"
+          :per-page-custom="[
+            [576, 1],
+            [768, 2],
+            [1024, 4],
+          ]"
+          :mouse-drag="true"
+          :navigation-enabled="windowWidth >= 576 ? true : false"
+          class="m-4"
+        >
+          <Slide v-for="(project, index) in displayProjects" :key="index">
+            <div class="card mb-[0.625rem] ml-0 mr-[0.625rem] mt-0 w-full overflow-hidden bg-white">
+              <img
+                :src="`${project.thumb_img}`"
+                :alt="`port-folio-${index}`"
+                class="portfolio-img block h-[300px] w-full object-cover"
+              />
+
+              <div class="card__body h-[300px] px-5 py-4">
+                <div class="flex h-[60px] items-center justify-center">
+                  <h3 class="text-size-[1.125rem] color-#003831 sm:text-size-5 font-bold">
+                    {{ project.title }}
+                  </h3>
+                </div>
+                <span
+                  class="text-size-5 color-#f44336 mb-[0.625rem] ml-0 mr-[0.625rem] mt-0 inline-block font-bold"
+                  :class="project.isFinished ? 'color-blue' : ''"
+                  >{{ project.finished_time }}</span
+                >
+                <span>
+                  <font-awesome-icon
+                    v-if="project.isFinished"
+                    :icon="['fas', 'check']"
+                    class="text-size-5 color-lightGreen"
+                  />
+                  <font-awesome-icon
+                    v-else
+                    :icon="['fas', 'wrench']"
+                    class="text-size-5 color-lightPink"
+                  />
+                </span>
+                <div>
+                  <ul
+                    v-for="(item, subIndex) in project.listItems"
+                    :key="subIndex"
+                    class="font-500 text-size-4 pl-4 text-left"
+                  >
+                    <li>{{ item }}</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="row">
+                  <div class="icon-circle-wrapper">
+                    <a target="_blank" :href="project.web_url">
+                      <font-awesome-icon :icon="['fas', 'external-link-alt']" class="icon" />
+                    </a>
+                  </div>
+                  <div v-if="project.github_url" class="icon-circle-wrapper">
+                    <a target="_blank" :href="project.github_url">
+                      <font-awesome-icon :icon="['fab', 'github']" class="icon" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Slide>
+        </Carousel>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .portfolio-img {

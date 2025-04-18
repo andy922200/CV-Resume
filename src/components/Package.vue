@@ -1,26 +1,3 @@
-<template>
-  <div class="row">
-    <h3 class="mx-0 my-5 text-size-[1.625rem] sm:text-size-[2rem] w-full">NPM Packages</h3>
-
-    <div v-for="item in displayPackages" :key="item.title" class="p-1 col-md-6">
-      <div class="card">
-        <div class="card-header bg-#CC3534 border-#CC3534 text-white">
-          {{ item.title }}
-        </div>
-        <div class="card-body">
-          <div class="h-[60px]">
-            {{ item.description }}
-          </div>
-
-          <a :href="item.link" target="_blank" class="btn border-#CC3534 text-#CC3534">
-            <font-awesome-icon :icon="['fab', 'npm']" class="card-footer__icon" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 defineOptions({
   name: 'Package',
@@ -53,3 +30,26 @@ const displayPackages: Package[] = [
   },
 ]
 </script>
+
+<template>
+  <div class="row">
+    <h3 class="text-size-[1.625rem] sm:text-size-[2rem] mx-0 my-5 w-full">NPM Packages</h3>
+
+    <div v-for="item in displayPackages" :key="item.title" class="col-md-6 p-1">
+      <div class="card">
+        <div class="card-header bg-#CC3534 border-#CC3534 text-white">
+          {{ item.title }}
+        </div>
+        <div class="card-body">
+          <div class="h-[60px]">
+            {{ item.description }}
+          </div>
+
+          <a :href="item.link" target="_blank" class="btn border-#CC3534 text-#CC3534">
+            <font-awesome-icon :icon="['fab', 'npm']" class="card-footer__icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

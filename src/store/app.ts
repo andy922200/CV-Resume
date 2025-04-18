@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
-const useAppStore = defineStore({
-  id: 'app',
+const useAppStore = defineStore('app', {
   state: () => ({
     windowWidth: 0,
     windowHeight: 0,

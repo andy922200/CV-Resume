@@ -1,38 +1,3 @@
-<template>
-  <div id="service" class="row">
-    <div class="col-12">
-      <h3 class="mt-6 mb-[0.625rem] mx-0 text-size-[1.625rem] sm:text-size-[2rem]">What I Offer</h3>
-      <div v-for="(service, index) in services" :key="index" class="flex flex-wrap mb-[0.625rem]">
-        <h4 class="mt-6 mb-[0.625rem] mx-0 w-full">{{ service.title }}</h4>
-        <div
-          v-for="object in service.data"
-          :key="object.name"
-          class="w-full md:w-[50%] lg:w-[33.33333%] text-center lg:text-left"
-        >
-          <font-awesome-icon
-            :icon="['fas', object.iconProp]"
-            class="color-#efb21e text-size-[2.5rem] line-height-[46px]"
-          />
-          <h3
-            class="color-#003831 font-bold text-size-[1.25rem] case-capital mt-[0.875rem] mb-[0.5rem]"
-          >
-            {{ object.name }}
-          </h3>
-          <ul class="pl-0">
-            <li
-              v-for="item in object.items"
-              :key="item"
-              class="list-none color-black text-size-[1rem] line-height-[1.75rem]"
-            >
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 defineOptions({
   name: 'WhatIOffer',
@@ -96,3 +61,38 @@ const services = [
   },
 ]
 </script>
+
+<template>
+  <div id="service" class="row">
+    <div class="col-12">
+      <h3 class="text-size-[1.625rem] sm:text-size-[2rem] mx-0 mb-[0.625rem] mt-6">What I Offer</h3>
+      <div v-for="(service, index) in services" :key="index" class="mb-[0.625rem] flex flex-wrap">
+        <h4 class="mx-0 mb-[0.625rem] mt-6 w-full">{{ service.title }}</h4>
+        <div
+          v-for="object in service.data"
+          :key="object.name"
+          class="w-full text-center md:w-[50%] lg:w-[33.33333%] lg:text-left"
+        >
+          <font-awesome-icon
+            :icon="['fas', object.iconProp]"
+            class="color-#efb21e text-size-[2.5rem] line-height-[46px]"
+          />
+          <h3
+            class="color-#003831 text-size-[1.25rem] case-capital mb-[0.5rem] mt-[0.875rem] font-bold"
+          >
+            {{ object.name }}
+          </h3>
+          <ul class="pl-0">
+            <li
+              v-for="item in object.items"
+              :key="item"
+              class="color-black text-size-[1rem] line-height-[1.75rem] list-none"
+            >
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

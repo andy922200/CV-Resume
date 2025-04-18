@@ -2,13 +2,11 @@
 
 declare module '*.vue' {
   import { DefineComponent } from 'vue'
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
   const component: DefineComponent<{}, {}, any>
   export default component
 }
 
 declare module '@jambonn/vue-concise-carousel' {
-  import { Carousel, Slide, Navigation, Pagination } from '@jambonn/vue-concise-carousel'
-
-  export { Carousel, Slide, Navigation, Pagination }
+  import { Carousel, Navigation, Pagination, Slide } from '@jambonn/vue-concise-carousel'
+  export { Carousel, Navigation, Pagination, Slide }
 }

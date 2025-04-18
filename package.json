@@ -1,14 +1,13 @@
 {
   "name": "cv_resume-website",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": false,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "lint": "pnpm eslint && pnpm prettier",
-    "prettier": "prettier --write .",
-    "eslint": "eslint \"./**/*.{ts,js,d.ts,vue}\" --fix"
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -19,26 +18,30 @@
     "@popperjs/core": "^2.11.8",
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.3.2",
-    "pinia": "^2.1.7",
+    "pinia": "^3.0.2",
     "vue": "^3.3.7",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
     "@types/aos": "^3.0.6",
     "@types/bootstrap": "^5.2.8",
-    "@types/node": "^20.8.9",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@typescript-eslint/parser": "^6.9.0",
-    "@vitejs/plugin-vue": "^4.4.0",
-    "eslint": "^8.52.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-vue": "^9.18.0",
+    "@types/node": "^22.14.1",
+    "@unocss/preset-wind3": "66.1.0-beta.11",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-vue": "^10.0.0",
+    "globals": "^16.0.0",
     "prettier": "^3.0.3",
-    "sass": "^1.69.4",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "sass": "^1.86.3",
     "typescript": "^5.2.2",
-    "unocss": "^0.57.1",
-    "vite": "^4.5.0",
-    "vue-tsc": "^1.8.21"
+    "typescript-eslint": "^8.30.1",
+    "unocss": "66.1.0-beta.11",
+    "vite": "^6.3.2",
+    "vue-tsc": "^2.2.8"
   }
 }

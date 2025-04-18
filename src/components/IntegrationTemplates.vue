@@ -1,26 +1,3 @@
-<template>
-  <div class="row">
-    <h3 class="mx-0 my-5 text-size-[1.625rem] sm:text-size-[2rem] w-full">IntegrationTemplates</h3>
-    <div v-for="item in displayTemplates" :key="item.name" class="p-1 col-md-6">
-      <div class="card">
-        <div class="card-header">
-          {{ item.header }}
-        </div>
-        <div class="card-body">
-          <div class="h-[60px]">
-            <p class="card-text">
-              {{ item.description }}
-            </p>
-          </div>
-          <a :href="item.link" target="_blank" class="btn btn-secondary">
-            <font-awesome-icon :icon="['fab', 'github']" class="card-footer__icon" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { computed } from 'vue'
 
@@ -100,3 +77,26 @@ const templates: Template[] = [
 
 const displayTemplates = computed(() => templates.filter((item) => !item.hide))
 </script>
+
+<template>
+  <div class="row">
+    <h3 class="text-size-[1.625rem] sm:text-size-[2rem] mx-0 my-5 w-full">IntegrationTemplates</h3>
+    <div v-for="item in displayTemplates" :key="item.name" class="col-md-6 p-1">
+      <div class="card">
+        <div class="card-header">
+          {{ item.header }}
+        </div>
+        <div class="card-body">
+          <div class="h-[60px]">
+            <p class="card-text">
+              {{ item.description }}
+            </p>
+          </div>
+          <a :href="item.link" target="_blank" class="btn btn-secondary">
+            <font-awesome-icon :icon="['fab', 'github']" class="card-footer__icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

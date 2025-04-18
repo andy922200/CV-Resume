@@ -1,25 +1,25 @@
 import {
-  faTwitter,
   faFacebook,
-  faInstagram,
   faGithub,
-  faWordpressSimple,
+  faInstagram,
   faLinkedinIn,
   faNpm,
+  faTwitter,
+  faWordpressSimple,
 } from '@fortawesome/free-brands-svg-icons'
 import {
-  faInbox,
-  faFileCode,
-  faServer,
-  faTasks,
-  faLanguage,
-  faMagnet,
-  faCertificate,
-  faExternalLinkAlt,
-  faCheck,
-  faWrench,
   faArrowUp,
   faBars,
+  faCertificate,
+  faCheck,
+  faExternalLinkAlt,
+  faFileCode,
+  faInbox,
+  faLanguage,
+  faMagnet,
+  faServer,
+  faTasks,
+  faWrench,
 } from '@fortawesome/free-solid-svg-icons'
 
 export const icons = {
