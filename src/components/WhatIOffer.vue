@@ -50,7 +50,6 @@ const services = [
           'SCSS / Bootstrap / Tailwind / Emotion',
           'JavaScript / TypeScript',
           'Vue Ecosystem ( Vue2, Vue3, Pinia, i18N )',
-          'Fundamental React Ecosystem (React, React Router)',
           'Vite / Webpack / Gulp',
           'ESLint, Prettier & Pre-Commit',
           'Unit Testing',

@@ -38,10 +38,17 @@ interface Template {
 
 const templates: Template[] = [
   {
+    name: 'vite-vue3-multi-pages-template',
+    header: 'Vue 3 + TS + Vite ( Multi Pages )',
+    description: 'MultiPages - Vue3, Axios, dayjs, eslint, stylelint, typescript, jest, testcafe',
+    link: 'https://github.com/andy922200/vite-vue3-multi-pages-template',
+  },
+  {
     name: 'vite-react-typescript-tailwindcss',
     header: 'Vite React TypeScript Template',
     description: 'React18, TypeScript, TailwindCSS, ESLint and Stylelint',
     link: 'https://github.com/andy922200/vite-react-typescript-tailwindcss',
+    hide: true,
   },
   {
     name: 'vite-vue3-ts-template',
@@ -54,6 +61,12 @@ const templates: Template[] = [
     header: 'Dotnet 5 Core MVC with Multi-Vue',
     description: 'Vue 3, Dotnet 5, TypeScript, i18n, ESLint, StyleLint, Axios',
     link: 'https://github.com/andy922200/dotnet-mvc-multi-vue-template',
+  },
+  {
+    name: 'nuxt3-typescript-tailwindcss-template',
+    header: 'Nuxt3 TypeScript TailwindCSS Template',
+    description: 'Nuxt3 + TypeScript + ESlint + TailwindCSS Template',
+    link: 'https://github.com/andy922200/nuxt3-typescript-tailwindcss-template',
   },
   {
     name: 'nuxt3-typescript-template',
@@ -74,6 +87,7 @@ const templates: Template[] = [
     header: 'Vue 2 & Vuetify Advanced',
     description: 'Vue 2, Vuetify, TypeScript, Jest, TestCafe, i18n, ESLint, StyleLint, Axios',
     link: 'https://github.com/andy922200/vue-vuetify-typescript-eslint-babel-stylelint-integration',
+    hide: true,
   },
   {
     name: 'gulp4withBabel7',

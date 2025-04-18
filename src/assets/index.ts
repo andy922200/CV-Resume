@@ -12,8 +12,10 @@ import ACDrink from './AC_Drink.jpg'
 import urlShortener from './urlShortener.jpg'
 import foreignExchangeGadget from './foreign-exchange-gadget.jpg'
 import industry4gen from './industry4gen.jpg'
+import componentLibraryDemo from './component-library-demo.png'
 
 export const images = {
+  componentLibraryDemo,
   taiwanMotelSearch,
   vueMultiSelect,
   vueTwZipCodeSelector,

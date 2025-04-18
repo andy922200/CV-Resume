@@ -104,8 +104,17 @@ const { app } = useStore()
 const windowWidth = computed(() => app.windowWidth)
 const projects: Project[] = [
   {
+    title: 'Component Library',
+    listItems: ['Vue 3', 'TypeScript', 'TypeScript', 'Prime Vue'],
+    finished_time: '2025-04-18',
+    isFinished: true,
+    thumb_img: images.componentLibraryDemo,
+    web_url: 'https://andy922200.github.io/component-library-demo/#/',
+    github_url: 'https://github.com/andy922200/component-library-demo',
+  },
+  {
     title: 'Taiwan Motel Search',
-    listItems: ['Vue 3', 'TypeScript', 'OpenLayers', 'Prime Vue'],
+    listItems: ['Vue 3', 'TypeScript', 'OpenLayers', 'Prime Vue 3'],
     finished_time: '2021-06-20',
     isFinished: true,
     thumb_img: images.taiwanMotelSearch,
